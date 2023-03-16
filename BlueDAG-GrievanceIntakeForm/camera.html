@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Request for Installation of Audio/Video Recording Equipment</title>
+</head>
+<body>
+  <h1>Request for the Installation of Audio/Video Recording Equipment in a Special Education Classroom</h1>
+  <p>Consistent with La. R.S. 17:1948, a parent or legal guardian may request the installation of an audio and video camera in a special education self-contained classroom or other special education setting. For more information, please visit the Exceptional Student Services webpage. This request will be in effect for one academic year: <input type="text" name="academic_year"></p>
+
+  <h2>Requestor's Information:</h2>
+  <ol>
+    <li><label for="name">Name (print):</label> <input type="text" id="name" name="name"></li>
+    <li><label for="phone">Phone number/cell number:</label> <input type="text" id="phone" name="phone"></li>
+    <li><label for="email">E-mail address:</label> <input type="email" id="email" name="email"></li>
+    <li><label for="address">Address:</label> <input type="text" id="address" name="address"></li>
+    <li>
+      <fieldset>
+        <legend>Relationship to child:</legend>
+        <label for="parent"><input type="radio" id="parent" name="relationship" value="parent"> Parent(s)</label>
+        <label for="guardian"><input type="radio" id="guardian" name="relationship" value="guardian"> Legal Guardian(s)</label>
+        <label for="adult_student"><input type="radio" id="adult_student" name="relationship" value="adult_student"> Adult Student</label>
+      </fieldset>
+    </li>
+    <li><label for="child_name">Child's full name:</label> <input type="text" id="child_name" name="child_name"> Date of Birth: <input type="date" id="dob" name="dob"></li>
+  </ol>
+
+  <h2>School Information:</h2>
+  <ol>
+    <li><label for="school">School:</label> <input type="text" id="school" name="school"></li>
+    <li><label for="grade">Grade:</label> <input type="text" id="grade" name="grade"></li>
+    <li><label for="classroom">Classroom/Room Number:</label> <input type="text" id="classroom" name="classroom"></li>
+    <li><label for="teacher">Teacher's name:</label> <input type="text" id="teacher" name="teacher"></li>
+  </ol>
+
+  <p>Signature: <input type="text" name="signature"> Date: <input type="date" name="date"></p>
+  
+  <ul>
+    <li>This request is valid only for the school year indicated above. A new request must be submitted for any subsequent school years on a yearly basis.</li>
+    <li>An acknowledgement letter will be sent to you within 5-7 days of receipt of the request.</li>
+    <li>A Notice of acceptance or denial will be sent to you within ten (10) days.</li>
+    <li>Please submit this form to the DDR utilizing the district's website/system.</li>
+    <li>We will strive to install the camera within 30 days of the approved request under normal circumstances. The district will reach out to you to discuss requests made late in the school year for timelines and options</li>
+    <li>A printed copy of this form can be completed/submitted at your child’s school site.</li>
+  </ul>
+<div>
+  <p>Verification: <input type="checkbox" name="verification" id="verification-principal" value="principal"> <label for="verification-principal">Principal/Assistant Principal</label> <input type="checkbox" name="verification" id="verification-ess" value="ess"> <label for="verification-ess">ESS Supervisor</label> <input type="checkbox" name="verification" id="verification-rep" value="rep"> <label for="verification-rep">Dist. Designated Representative</label></p>
+  <p>This request is: <input type="checkbox" name="approval" id="approval-approved" value="approved"> <label for="approval-approved">Approved</label> <input type="checkbox" name="approval" id="approval-denied" value="denied"> <label for="approval-denied">Denied</label></p>
+  <p>The reasons for the denial:</p>
+  <ul>
+    <li><input type="checkbox" name="denial-reason" id="denial-not-parent" value="not-parent"> <label for="denial-not-parent">The Applicant is not the parent or legal guardian.</label></li>
+    <li><input type="checkbox" name="denial-reason" id="denial-not-self-contained" value="not-self-contained"> <label for="denial-not-self-contained">The classroom is not self-contained or another special education setting where special education services are provided at least 50% of the time.</label></li>
+    <li><input type="checkbox" name="denial-reason" id="denial-lack-funding" value="lack-funding"> <label for="denial-lack-funding">There is a lack of specific and adequate funding.</label></li>
+    <li><input type="checkbox" name="denial-reason" id="denial-other" value="other"> <label for="denial-other">Other reason: <input type="text" name="denial-other-reason" id="denial-other-reason"></label></li>
+  </ul>
+</div>
+</body>
+</html>
