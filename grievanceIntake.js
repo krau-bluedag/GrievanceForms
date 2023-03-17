@@ -447,7 +447,7 @@ function submitGrievanceForm(e) {
                 }
             }
         };
-        xhr.open("POST", "https:\/\/api.dev.bluedag.com\/js\/grievance\/submit?jsAuth=9t5dioDO9dnA92TNYXpErh9gsF3mvTxVJEjw2O0NOMGLz9DiY4q4uuFFThyNvDPy");
+        xhr.open("POST", "https:\/\/api.bluedag.com\/js\/grievance\/submit?jsAuth=9t5dioDO9dnA92TNYXpErh9gsF3mvTxVJEjw2O0NOMGLz9DiY4q4uuFFThyNvDPy");
         xhr.setRequestHeader("Content-Type", "application/json");
         xhr.send(JSON.stringify(postObj));
 
