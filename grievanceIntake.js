@@ -37,9 +37,9 @@ function initGrievanceForm() {
                         <select name="cf_RAProgramType" id="bd-641368827177c-RAProgramType" required>
                             <option value="" selected="selected">Please Select...</option>
                             <option value="Grievance">Grievance</option>
-                            <option value="Reasonable Accommodation">Reasonable Accommodation General</option>
-                            <option value="Camera">Audio/Video Recording Request</option>
-                            <option value="Interpreter">Interpreting Service Request</option>
+                            <option value="Reasonable Accommodation">Reasonable Accommodation</option>
+                            <option value="Audio/Video Recording Request">Audio/Video Recording Request</option>
+                            <option value="Interpreting Service Request">Interpreting Service Request</option>
                         </select>
                     </span>
                 </div>
@@ -411,9 +411,9 @@ function submitGrievanceForm(e) {
     if (selectedForm === "Grievance" || selectedForm === "Reasonable Accommodation") {
         formId = "grievanceForm";
         document.getElementById("bd-641368827177c-RequestTypeID").value = selectedForm === "Grievance" ? 3 : 4;
-    } else if (selectedForm === "Camera") {
+    } else if (selectedForm === "Audio/Video Recording Request") {
         formId = "raCameraForm";
-    } else if (selectedForm === "Interpreter") {
+    } else if (selectedForm === "Interpreting Service Request") {
         formId = "raInterpreterForm";
     }
 
@@ -494,9 +494,9 @@ function swapGrievanceForms() {
     if (selectedValue === "Grievance" || selectedValue === "Reasonable Accommodation") {
         document.getElementById("bd-641368827177c-grievanceFormTitle").innerHTML = selectedValue;
         grievanceForm.style.display = "block";
-    } else if (selectedValue === "Camera") {
+    } else if (selectedValue === "Audio/Video Recording Request") {
         cameraForm.style.display = "block";
-    } else if (selectedValue === "Interpreter") {
+    } else if (selectedValue === "Interpreting Service Request") {
         interpreterForm.style.display = "block";
     }
 }
