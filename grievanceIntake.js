@@ -1,5 +1,16 @@
 function initGrievanceForm() {
     //build Grievance form
+    const cf = {
+        RAProgramType: 809,
+        AcademicYear: 810,
+        RelationshipToChild: 806,
+        ChildName: 804,
+        Dob: 805,
+        Grade: 807, 
+        RoomNumber: 803,
+        Teacher: 808,
+        FloorNumber: 802
+    };
     let grievanceTemplate = `
         <style>
             .bd-641368827177c-control-group {
@@ -34,7 +45,7 @@ function initGrievanceForm() {
                 <label for="bd-641368827177c-RAProgramType" class=""><span class="bd-641368827177c-required-label">*</span> Reasonable Accommodation Program Type:</label>
                 <div style="padding: 10px 0;">
                     <span>
-                        <select name="cf_RAProgramType" id="bd-641368827177c-RAProgramType" required>
+                        <select name="cf_${cf.RAProgramType}" id="bd-641368827177c-RAProgramType" required>
                             <option value="" selected="selected">Please Select...</option>
                             <option value="Grievance">Grievance</option>
                             <option value="Reasonable Accommodation">Reasonable Accommodation</option>
@@ -182,7 +193,7 @@ function initGrievanceForm() {
                 <div class="bd-641368827177c-control-group">
                     <label for="bd-641368827177c-raCameraForm-AcademicYear" class="bd-641368827177c-control-label">Year:</label>
                     <div class="bd-641368827177c-controls">
-                        <input type="text" name="cf_AcademicYear" value="" id="bd-641368827177c-raCameraForm-AcademicYear" />
+                        <input type="text" name="cf_${cf.AcademicYear}" value="" id="bd-641368827177c-raCameraForm-AcademicYear" />
                     </div>
                 </div>
                 <h3>Requestor Information:</h3>
@@ -207,21 +218,21 @@ function initGrievanceForm() {
                 <div class="bd-641368827177c-control-group">
                     <label class="bd-641368827177c-control-label">Relationship to child:</label>
                     <div class="bd-641368827177c-controls">
-                        <label class="radio"><input type="radio" name="cf_RelationshipToChild" value="parents" /> Parent(s)</label>
-                        <label class="radio"><input type="radio" name="cf_RelationshipToChild" value="legal guardian" /> Legal Guardian(s)</label>
-                        <label class="radio"><input type="radio" name="cf_RelationshipToChild" value="adult student" /> Adult Student</label>
+                        <label class="radio"><input type="radio" name="cf_${cf.RelationshipToChild}" value="parents" /> Parent(s)</label>
+                        <label class="radio"><input type="radio" name="cf_${cf.RelationshipToChild}" value="legal guardian" /> Legal Guardian(s)</label>
+                        <label class="radio"><input type="radio" name="cf_${cf.RelationshipToChild}" value="adult student" /> Adult Student</label>
                     </div>
                 </div>
                 <div class="bd-641368827177c-control-group">
                     <label for="bd-641368827177c-raCameraForm-ChildName" class="bd-641368827177c-control-label"><span class="bd-641368827177c-required-label">*</span> Child's full name:</label>
                     <div class="bd-641368827177c-controls">
-                        <input type="text" name="cf_ChildName" value="" id="bd-641368827177c-raCameraForm-ChildName" required />
+                        <input type="text" name="cf_${cf.ChildName}" value="" id="bd-641368827177c-raCameraForm-ChildName" required />
                     </div>
                 </div>
                 <div class="bd-641368827177c-control-group">
                     <label for="bd-641368827177c-raCameraForm-Dob" class="bd-641368827177c-control-label">Date of Birth:</label>
                     <div class="bd-641368827177c-controls">
-                        <input type="date" size="16" name="cf_Dob" value="" id="bd-641368827177c-raCameraForm-Dob" />
+                        <input type="date" size="16" name="cf_${cf.Dob}" value="" id="bd-641368827177c-raCameraForm-Dob" />
                     </div>
                 </div>
                 <h3>School Information:</h3>
@@ -257,19 +268,19 @@ function initGrievanceForm() {
                 <div class="bd-641368827177c-control-group">
                     <label for="bd-641368827177c-raCameraForm-Grade" class="bd-641368827177c-control-label">Grade:</label>
                     <div class="bd-641368827177c-controls">
-                        <input type="text" name="cf_Grade" value="" id="bd-641368827177c-raCameraForm-Grade" />
+                        <input type="text" name="cf_${cf.Grade}" value="" id="bd-641368827177c-raCameraForm-Grade" />
                     </div>
                 </div>
                 <div class="bd-641368827177c-control-group">
                     <label for="bd-641368827177c-raCameraForm-RoomNumber" class="bd-641368827177c-control-label">Classroom / Room Number:</label>
                     <div class="bd-641368827177c-controls">
-                        <input type="text" name="cf_RoomNumber" value="" id="bd-641368827177c-raCameraForm-RoomNumber" />
+                        <input type="text" name="cf_${cf.RoomNumber}" value="" id="bd-641368827177c-raCameraForm-RoomNumber" />
                     </div>
                 </div>
                 <div class="bd-641368827177c-control-group">
                     <label for="bd-641368827177c-raCameraForm-Teacher" class="bd-641368827177c-control-label">Teacher's name:</label>
                     <div class="bd-641368827177c-controls">
-                        <input type="text" name="cf_Teacher" value="" id="bd-641368827177c-raCameraForm-Teacher" />
+                        <input type="text" name="cf_${cf.Teacher}" value="" id="bd-641368827177c-raCameraForm-Teacher" />
                     </div>
                 </div>
             </div>
@@ -355,26 +366,26 @@ function initGrievanceForm() {
                 <div class="bd-641368827177c-control-group">
                     <label for="bd-641368827177c-raInterpreterForm-FloorNumber" class="bd-641368827177c-control-label">Floor Number:</label>
                     <div class="bd-641368827177c-controls">
-                        <input type="text" name="cf_FloorNumber" value="" id="bd-641368827177c-raInterpreterForm-FloorNumber" />
+                        <input type="text" name="cf_${cf.FloorNumber}" value="" id="bd-641368827177c-raInterpreterForm-FloorNumber" />
                     </div>
                 </div>
                 <div class="bd-641368827177c-control-group">
                     <label for="bd-641368827177c-raInterpreterForm-RoomNumber" class="bd-641368827177c-control-label">Suite Number:</label>
                     <div class="bd-641368827177c-controls">
-                        <input type="text" name="cf_RoomNumber" value="" id="bd-641368827177c-raInterpreterForm-RoomNumber" />
+                        <input type="text" name="cf_${cf.RoomNumber}" value="" id="bd-641368827177c-raInterpreterForm-RoomNumber" />
                     </div>
                 </div>
                 <h4>Client Information</h4>
                 <div class="bd-641368827177c-control-group">
                     <label for="bd-641368827177c-raInterpreterForm-ChildName" class="bd-641368827177c-control-label">Client/Patient:</label>
                     <div class="bd-641368827177c-controls">
-                        <input type="text" name="cf_ChildName" value="" id="bd-641368827177c-raInterpreterForm-ChildName" />
+                        <input type="text" name="cf_${cf.ChildName}" value="" id="bd-641368827177c-raInterpreterForm-ChildName" />
                     </div>
                 </div>
                 <div class="bd-641368827177c-control-group">
                     <label for="bd-641368827177c-raInterpreterForm-Dob" class="bd-641368827177c-control-label">Date of Birth:</label>
                     <div class="bd-641368827177c-controls">
-                        <input type="date" size="16" name="cf_Dob" value="" id="bd-641368827177c-raInterpreterForm-Dob" />
+                        <input type="date" size="16" name="cf_${cf.Dob}" value="" id="bd-641368827177c-raInterpreterForm-Dob" />
                     </div>
                 </div>
                 <h4>Additional Information</h4>
@@ -438,7 +449,7 @@ function submitGrievanceForm(e) {
             }
         }
         customFields['RAProgramType'] = selectedForm;
-        postObj['CustomFields'] = customFields;
+        postObj['ExtraData']['Custom'] = customFields;
 
         //POST to BlueDAG API
         var xhr = new XMLHttpRequest();
@@ -453,7 +464,7 @@ function submitGrievanceForm(e) {
                 }
             }
         };
-        xhr.open("POST", "https:\/\/api.bluedag.com\/js\/grievance\/submit?jsAuth=9t5dioDO9dnA92TNYXpErh9gsF3mvTxVJEjw2O0NOMGLz9DiY4q4uuFFThyNvDPy");
+        xhr.open("POST", "https:\/\/api.dev.bluedag.com\/js\/grievance\/submit?jsAuth=9t5dioDO9dnA92TNYXpErh9gsF3mvTxVJEjw2O0NOMGLz9DiY4q4uuFFThyNvDPy");
         xhr.setRequestHeader("Content-Type", "application/json");
         xhr.send(JSON.stringify(postObj));
 
