@@ -449,7 +449,7 @@ function submitGrievanceForm(e) {
             }
         }
         customFields['RAProgramType'] = selectedForm;
-        postObj.ExtraData.Custom = customFields;
+        postObj.ExtraData = { Custom: customFields};
 
         //POST to BlueDAG API
         var xhr = new XMLHttpRequest();
