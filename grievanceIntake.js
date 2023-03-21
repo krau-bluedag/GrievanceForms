@@ -222,11 +222,13 @@ function initGrievanceForm() {
                     </div>
                 </div>
                 <div class="bd-641368827177c-control-group">
-                    <label class="bd-641368827177c-control-label">Relationship to child:</label>
+                    <label class="bd-641368827177c-control-label" for="bd-641368827177c-RelationshipToChild">Relationship to child:</label>
                     <div class="bd-641368827177c-controls">
-                        <label class="radio"><input type="radio" name="cf_${cf.RelationshipToChild}" value="parents" /> Parent(s)</label>
-                        <label class="radio"><input type="radio" name="cf_${cf.RelationshipToChild}" value="legal guardian" /> Legal Guardian(s)</label>
-                        <label class="radio"><input type="radio" name="cf_${cf.RelationshipToChild}" value="adult student" /> Adult Student</label>
+                        <select name="cf_${cf.RelationshipToChild}" id="bd-641368827177c-RelationshipToChild" required>
+                            <option value="parents">Parent(s)</option>
+                            <option value="legal guardian">Legal Guardian(s)</option>
+                            <option value="adult student">Adult Student</option>
+                        </select>
                     </div>
                 </div>
                 <div class="bd-641368827177c-control-group">
