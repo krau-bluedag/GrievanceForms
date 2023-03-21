@@ -1,3 +1,5 @@
+var path = "https:\/\/api.dev.bluedag.com\/js\/grievance\/submit?jsAuth=";
+var token = "Bj0twoiOr3hGp0imzwFmYvVXoeK9SftCBwMBaYZR8Ww4Y4MgQAR8ZoZbw35kx1lp";
 var cf = {
     RAProgramType: 819,
     AcademicYear: 811,
@@ -81,10 +83,12 @@ function initGrievanceForm() {
                     </div>
                 </div>
                 <div class="bd-641368827177c-control-group">
-                    <label class="bd-641368827177c-control-label">Is submitter different:</label>
+                    <label class="bd-641368827177c-control-label" for="bd-641368827177c-SubmitterDifferent">Is submitter different:</label>
                     <div class="bd-641368827177c-controls">
-                        <label class="radio"><input type="radio" name="SubmitterDifferent" value="yes" id="bd-641368827177c-SubmitterDifferent_Yes" /> Yes</label>
-                        <label class="radio"><input type="radio" name="SubmitterDifferent" value="no" id="bd-641368827177c-SubmitterDifferent_No" checked /> No</label>
+                        <select name="SubmitterDifferent" id="bd-641368827177c-SubmitterDifferent" required>
+                            <option value="no">No</option>
+                            <option value="yes">Yes</option>
+                        </select>
                     </div>
                 </div>
                 <div id="bd-641368827177c-submitterDetails" style="display: none;">
@@ -155,11 +159,13 @@ function initGrievanceForm() {
                 <hr />
                 <h4>Request Information</h4>
                 <div class="bd-641368827177c-control-group">
-                    <label class="bd-641368827177c-control-label">Is this ADA-related:</label>
+                    <label class="bd-641368827177c-control-label" for="bd-641368827177c-ADAGrievance">Is this ADA-related:</label>
                     <div class="bd-641368827177c-controls">
-                        <label><input type="radio" name="ADAGrievance" value="1" /> Yes</label>
-                        <label><input type="radio" name="ADAGrievance" value="0" /> No</label>
-                        <label><input type="radio" name="ADAGrievance" value="-1" checked="checked" /> Undetermined</label>
+                        <select name="ADAGrievance" id="bd-641368827177c-ADAGrievance" required>
+                            <option value="-1">Undetermined</option>
+                            <option value="0">No</option>
+                            <option value="1">Yes</option>
+                        </select>
                     </div>
                 </div>
                 <div class="bd-641368827177c-control-group">
@@ -408,8 +414,7 @@ function initGrievanceForm() {
     document.getElementById("bd-641368827177c-grievanceFormSubmitBtn").addEventListener("click", submitGrievanceForm);
     document.getElementById("bd-641368827177c-raCameraSubmitBtn").addEventListener("click", submitGrievanceForm);
     document.getElementById("bd-641368827177c-raInterpreterSubmitBtn").addEventListener("click", submitGrievanceForm);
-    document.getElementById("bd-641368827177c-SubmitterDifferent_Yes").addEventListener("change", submitterDifferent);
-    document.getElementById("bd-641368827177c-SubmitterDifferent_No").addEventListener("change", submitterDifferent);
+    document.getElementById("bd-641368827177c-SubmitterDifferent").addEventListener("change", submitterDifferent);
 }
 initGrievanceForm();
 
@@ -467,9 +472,9 @@ function submitGrievanceForm(e) {
                 }
             }
         };
-        xhr.open("POST", "https:\/\/api.dev.bluedag.com\/js\/grievance\/submit?jsAuth=Bj0twoiOr3hGp0imzwFmYvVXoeK9SftCBwMBaYZR8Ww4Y4MgQAR8ZoZbw35kx1lp");
+        xhr.open("POST", path + token);
         xhr.setRequestHeader("Content-Type", "application/json");
-        console.log(postObj);
+        console.log(postObj); //testing
         xhr.send(JSON.stringify(postObj));
 
         document.getElementById("bd-grievance").innerHTML = "Submitting your grievance...";
