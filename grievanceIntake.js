@@ -1,15 +1,15 @@
-var path = "https:\/\/api.dev.bluedag.com\/js\/grievance\/submit?jsAuth=";
-var token = "Bj0twoiOr3hGp0imzwFmYvVXoeK9SftCBwMBaYZR8Ww4Y4MgQAR8ZoZbw35kx1lp";
+var path = "https:\/\/api.bluedag.com\/js\/grievance\/submit?jsAuth=";
+var token = "9t5dioDO9dnA92TNYXpErh9gsF3mvTxVJEjw2O0NOMGLz9DiY4q4uuFFThyNvDPy";
 var cf = {
-    RAProgramType: 819,
-    AcademicYear: 811,
-    RelationshipToChild: 816,
-    ChildName: 814,
-    Dob: 815,
-    Grade: 817, 
-    RoomNumber: 813,
-    Teacher: 818,
-    FloorNumber: 812
+    RAProgramType: 1931,
+    AcademicYear: 1923,
+    RelationshipToChild: 1928,
+    ChildName: 1926,
+    Dob: 1927,
+    Grade: 1929, 
+    RoomNumber: 1925,
+    Teacher: 1930,
+    FloorNumber: 1924
 };
 function initGrievanceForm() {
     //build Grievance form
