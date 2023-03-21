@@ -336,7 +336,7 @@ function initGrievanceForm() {
                 <div class="bd-641368827177c-control-group">
                     <label for="bd-641368827177c-raInterpreterForm-LocationAddress" class="bd-641368827177c-control-label"><span class="bd-641368827177c-required-label">*</span> Location:</label>
                     <div class="bd-641368827177c-controls">
-                        <input type="text" name="" value="" id="bd-641368827177c-raInterpreterForm-LocationAddress" required />
+                        <input type="text" name="LocationAddress" value="" id="bd-641368827177c-raInterpreterForm-LocationAddress" required />
                     </div>
                 </div>
                 <div class="bd-641368827177c-control-group">
@@ -466,6 +466,7 @@ function submitGrievanceForm(e) {
         };
         xhr.open("POST", "https:\/\/api.dev.bluedag.com\/js\/grievance\/submit?jsAuth=Bj0twoiOr3hGp0imzwFmYvVXoeK9SftCBwMBaYZR8Ww4Y4MgQAR8ZoZbw35kx1lp");
         xhr.setRequestHeader("Content-Type", "application/json");
+        console.log(postObj);
         xhr.send(JSON.stringify(postObj));
 
         document.getElementById("bd-grievance").innerHTML = "Submitting your grievance...";
