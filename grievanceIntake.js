@@ -1,15 +1,30 @@
-var path = "https:\/\/api.bluedag.com\/js\/grievance\/submit?jsAuth=";
-var token = "9t5dioDO9dnA92TNYXpErh9gsF3mvTxVJEjw2O0NOMGLz9DiY4q4uuFFThyNvDPy";
+//var path = "https:\/\/api.bluedag.com\/js\/grievance\/submit?jsAuth="; //production
+var path = "https:\/\/api.dev.bluedag.com\/js\/grievance\/submit?jsAuth="; //dev
+//var token = "9t5dioDO9dnA92TNYXpErh9gsF3mvTxVJEjw2O0NOMGLz9DiY4q4uuFFThyNvDPy"; //production
+var token = "Bj0twoiOr3hGp0imzwFmYvVXoeK9SftCBwMBaYZR8Ww4Y4MgQAR8ZoZbw35kx1lp"; //dev
+// var cf = {
+//     AcademicYear: 1923,
+//     RelationshipToChild: 1928,
+//     ChildName: 1926,
+//     Dob: 1927,
+//     Grade: 1929, 
+//     RoomNumber: 1925,
+//     Teacher: 1930,
+//     FloorNumber: 1924,
+//     requestTypeCamera: 10, //for internal.dev
+//     requestTypeInterpreter: 11 //for internal.dev
+// };
 var cf = {
-    RAProgramType: 1931,
-    AcademicYear: 1923,
-    RelationshipToChild: 1928,
-    ChildName: 1926,
-    Dob: 1927,
-    Grade: 1929, 
-    RoomNumber: 1925,
-    Teacher: 1930,
-    FloorNumber: 1924
+    AcademicYear: 811,
+    RelationshipToChild: 816,
+    ChildName: 814,
+    Dob: 815,
+    Grade: 817, 
+    RoomNumber: 813,
+    Teacher: 818,
+    FloorNumber: 812,
+    requestTypeCamera: 10, //for internal.dev
+    requestTypeInterpreter: 11 //for internal.dev
 };
 function initGrievanceForm() {
     //build Grievance form
@@ -44,15 +59,15 @@ function initGrievanceForm() {
         </style>
         <div id="bd-641368827177c-formSelector">
             <div>
-                <label for="bd-641368827177c-RAProgramType" class=""><span class="bd-641368827177c-required-label">*</span> Reasonable Accommodation Program Type:</label>
+                <label for="bd-641368827177c-RequestTypeID" class=""><span class="bd-641368827177c-required-label">*</span> Reasonable Accommodation Program Type:</label>
                 <div style="padding: 10px 0;">
                     <span>
-                        <select name="cf_${cf.RAProgramType}" id="bd-641368827177c-RAProgramType" required>
+                        <select name="RequestTypeID" id="bd-641368827177c-RequestTypeID" required>
                             <option value="" selected="selected">Please Select...</option>
-                            <option value="Grievance">Grievance</option>
-                            <option value="Reasonable Accommodation">Reasonable Accommodation</option>
-                            <option value="Audio/Video Recording Request">Audio/Video Recording Request</option>
-                            <option value="Interpreting Service Request">Interpreting Service Request</option>
+                            <option value="3">Grievance</option>
+                            <option value="4">Reasonable Accommodation</option>
+                            <option value="${cf.requestTypeCamera}">Audio/Video Recording Request</option>
+                            <option value="${cf.requestTypeInterpreter}">Interpreting Service Request</option>
                         </select>
                     </span>
                 </div>
@@ -60,26 +75,31 @@ function initGrievanceForm() {
         </div>
         <hr />
         <form id="bd-641368827177c-grievanceForm" accept-charset="utf-8" style="display:none;">
-            <input type="hidden" name="RequestTypeID" id="bd-641368827177c-RequestTypeID" value="3" />
             <h3 id="bd-641368827177c-grievanceFormTitle">Grievance</h3>
             <div>
                 <h4>Requester Information</h4>
                 <div class="bd-641368827177c-control-group">
-                    <label for="bd-641368827177c-RequesterName" class="bd-641368827177c-control-label"><span class="bd-641368827177c-required-label">*</span> Name:</label>
+                    <label for="bd-641368827177c-RequesterFirstName" class="bd-641368827177c-control-label"><span class="bd-641368827177c-required-label">*</span> Name:</label>
                     <div class="bd-641368827177c-controls">
-                        <input type="text" name="RequesterName" value="" id="bd-641368827177c-RequesterName" required />
+                        <input type="text" name="RequesterFirstName" value="" id="bd-641368827177c-RequesterFirstName" placeholder="First Name" required />
+                        <input type="text" name="RequesterLastName" value="" id="bd-641368827177c-RequesterLastName" placeholder="Last Name" aria-label="Last Name" required />
                     </div>
                 </div>
                 <div class="bd-641368827177c-control-group">
                     <label for="bd-641368827177c-RequesterPhone" class="bd-641368827177c-control-label">Phone Number:</label>
                     <div class="bd-641368827177c-controls">
-                        <input type="tel" name="RequesterPhone" value="" id="bd-641368827177c-RequesterPhone" />
+                        <input type="tel" name="RequesterPhone" class="bd-641368827177c-poc" value="" id="bd-641368827177c-RequesterPhone" required />
                     </div>
                 </div>
                 <div class="bd-641368827177c-control-group">
                     <label for="bd-641368827177c-RequesterEmail" class="bd-641368827177c-control-label">Email:</label>
                     <div class="bd-641368827177c-controls">
-                        <input type="email" name="RequesterEmail" value="" id="bd-641368827177c-RequesterEmail" />
+                        <input type="email" name="RequesterEmail" class="bd-641368827177c-poc" value="" id="bd-641368827177c-RequesterEmail" required />
+                    </div>
+                </div>
+                <div class="bd-641368827177c-control-group">
+                    <div class="bd-641368827177c-controls">
+                        <span class="bd-641368827177c-required-label">*</span> Please provide either an email or phone number.
                     </div>
                 </div>
                 <div class="bd-641368827177c-control-group">
@@ -95,9 +115,10 @@ function initGrievanceForm() {
                     <hr />
                     <h4>Submitter Information</h4>
                     <div class="bd-641368827177c-control-group">
-                        <label for="bd-641368827177c-SubmitterName" class="bd-641368827177c-control-label">Name:</label>
+                        <label for="bd-641368827177c-SubmitterFirstName" class="bd-641368827177c-control-label">Name:</label>
                         <div class="bd-641368827177c-controls">
-                            <input type="text" name="SubmitterName" value="" id="bd-641368827177c-SubmitterName" />
+                            <input type="text" name="SubmitterFirstName" value="" id="bd-641368827177c-SubmitterFirstName" placeholder="First Name" />
+                            <input type="text" name="SubmitterLastName" value="" id="bd-641368827177c-SubmitterLastName" placeholder="Last Name" aria-label="Last Name" required />
                         </div>
                     </div>
                     <div class="bd-641368827177c-control-group">
@@ -204,30 +225,36 @@ function initGrievanceForm() {
                 </div>
                 <h3>Requestor Information:</h3>
                 <div class="bd-641368827177c-control-group">
-                    <label for="bd-641368827177c-raCameraForm-RequesterName" class="bd-641368827177c-control-label"><span class="bd-641368827177c-required-label">*</span> Name:</label>
+                    <label for="bd-641368827177c-raCameraForm-RequesterFirstName" class="bd-641368827177c-control-label"><span class="bd-641368827177c-required-label">*</span> Name:</label>
                     <div class="bd-641368827177c-controls">
-                        <input type="text" name="RequesterName" value="" id="bd-641368827177c-raCameraForm-RequesterName" required />
+                        <input type="text" name="RequesterFirstName" value="" id="bd-641368827177c-raCameraForm-RequesterFirstName" placeholder="First Name" required />
+                        <input type="text" name="RequesterLastName" value="" id="bd-641368827177c-raCameraForm-RequesterLastName" placeholder="Last Name" aria-label="Last Name" required />
                     </div>
                 </div>
                 <div class="bd-641368827177c-control-group">
-                    <label for="bd-641368827177c-raCameraForm-RequesterPhone" class="bd-641368827177c-control-label"><span class="bd-641368827177c-required-label">*</span> Phone Number:</label>
+                    <label for="bd-641368827177c-raCameraForm-RequesterPhone" class="bd-641368827177c-control-label">Phone Number:</label>
                     <div class="bd-641368827177c-controls">
-                        <input type="tel" name="RequesterPhone" value="" id="bd-641368827177c-raCameraForm-RequesterPhone" required />
+                        <input type="tel" name="RequesterPhone" class="bd-641368827177c-poc" value="" id="bd-641368827177c-raCameraForm-RequesterPhone" required />
                     </div>
                 </div>
                 <div class="bd-641368827177c-control-group">
                     <label for="bd-641368827177c-raCameraForm-RequesterEmail" class="bd-641368827177c-control-label">Email:</label>
                     <div class="bd-641368827177c-controls">
-                        <input type="email" name="RequesterEmail" value="" id="bd-641368827177c-raCameraForm-RequesterEmail" />
+                        <input type="email" name="RequesterEmail" class="bd-641368827177c-poc" value="" id="bd-641368827177c-raCameraForm-RequesterEmail" required />
+                    </div>
+                </div>
+                <div class="bd-641368827177c-control-group">
+                    <div class="bd-641368827177c-controls">
+                        <span class="bd-641368827177c-required-label">*</span> Please provide either an email or phone number.
                     </div>
                 </div>
                 <div class="bd-641368827177c-control-group">
                     <label class="bd-641368827177c-control-label" for="bd-641368827177c-RelationshipToChild">Relationship to child:</label>
                     <div class="bd-641368827177c-controls">
                         <select name="cf_${cf.RelationshipToChild}" id="bd-641368827177c-RelationshipToChild" required>
-                            <option value="parents">Parent(s)</option>
-                            <option value="legal guardian">Legal Guardian(s)</option>
-                            <option value="adult student">Adult Student</option>
+                            <option value="Parents">Parent(s)</option>
+                            <option value="Legal Guardians">Legal Guardian(s)</option>
+                            <option value="Adult Student">Adult Student</option>
                         </select>
                     </div>
                 </div>
@@ -310,28 +337,35 @@ function initGrievanceForm() {
             <div>
                 <h4>Requester Information</h4>
                 <div class="bd-641368827177c-control-group">
-                    <label for="bd-641368827177c-raInterpreterForm-RequesterName" class="bd-641368827177c-control-label"><span class="bd-641368827177c-required-label">*</span> Name:</label>
+                    <label for="bd-641368827177c-raInterpreterForm-RequesterFirstName" class="bd-641368827177c-control-label"><span class="bd-641368827177c-required-label">*</span> Name:</label>
                     <div class="bd-641368827177c-controls">
-                        <input type="text" name="RequesterName" value="" id="bd-641368827177c-raInterpreterForm-RequesterName" required />
+                        <input type="text" name="RequesterFirstName" value="" id="bd-641368827177c-raInterpreterForm-RequesterFirstName" placeholder="First Name" required />
+                        <input type="text" name="RequesterLastName" value="" id="bd-641368827177c-raInterpreterForm-RequesterLastName" placeholder="Last Name" aria-label="Last Name" required />
                     </div>
                 </div>
                 <div class="bd-641368827177c-control-group">
-                    <label for="bd-641368827177c-raInterpreterForm-RequesterPhone" class="bd-641368827177c-control-label"><span class="bd-641368827177c-required-label">*</span> Phone Number:</label>
+                    <label for="bd-641368827177c-raInterpreterForm-RequesterPhone" class="bd-641368827177c-control-label">Phone Number:</label>
                     <div class="bd-641368827177c-controls">
-                        <input type="tel" name="RequesterPhone" value="" id="bd-641368827177c-raInterpreterForm-RequesterPhone" required />
+                        <input type="tel" name="RequesterPhone" class="bd-641368827177c-poc" value="" id="bd-641368827177c-raInterpreterForm-RequesterPhone" required />
                     </div>
                 </div>
                 <div class="bd-641368827177c-control-group">
                     <label for="bd-641368827177c-raInterpreterForm-RequesterEmail" class="bd-641368827177c-control-label">Email:</label>
                     <div class="bd-641368827177c-controls">
-                        <input type="email" name="RequesterEmail" value="" id="bd-641368827177c-raInterpreterForm-RequesterEmail" />
+                        <input type="email" name="RequesterEmail" class="bd-641368827177c-poc" value="" id="bd-641368827177c-raInterpreterForm-RequesterEmail" required />
+                    </div>
+                </div>
+                <div class="bd-641368827177c-control-group">
+                    <div class="bd-641368827177c-controls">
+                        <span class="bd-641368827177c-required-label">*</span> Please provide either an email or phone number.
                     </div>
                 </div>
                 <h4>Contact Information</h4>
                 <div class="bd-641368827177c-control-group">
-                    <label for="bd-641368827177c-raInterpreterForm-SubmitterName" class="bd-641368827177c-control-label">Contact Person/Doctor:</label>
+                    <label for="bd-641368827177c-raInterpreterForm-SubmitterFirstName" class="bd-641368827177c-control-label">Contact Person/Doctor:</label>
                     <div class="bd-641368827177c-controls">
-                        <input type="text" name="SubmitterName" value="" id="bd-641368827177c-raInterpreterForm-SubmitterName" />
+                        <input type="text" name="SubmitterFirstName" value="" id="bd-641368827177c-raInterpreterForm-SubmitterFirstName" placeholder="First Name" required />
+                        <input type="text" name="SubmitterLastName" value="" id="bd-641368827177c-SubmitterLastName" placeholder="Last Name" aria-label="Last Name" required />
                     </div>
                 </div>
                 <div class="bd-641368827177c-control-group">
@@ -412,26 +446,30 @@ function initGrievanceForm() {
     document.getElementById("bd-grievance").innerHTML = grievanceTemplate;
 
     //add listeners
-    document.getElementById("bd-641368827177c-RAProgramType").addEventListener("change", swapGrievanceForms);
+    document.getElementById("bd-641368827177c-RequestTypeID").addEventListener("change", swapGrievanceForms);
     document.getElementById("bd-641368827177c-grievanceFormSubmitBtn").addEventListener("click", submitGrievanceForm);
     document.getElementById("bd-641368827177c-raCameraSubmitBtn").addEventListener("click", submitGrievanceForm);
     document.getElementById("bd-641368827177c-raInterpreterSubmitBtn").addEventListener("click", submitGrievanceForm);
     document.getElementById("bd-641368827177c-SubmitterDifferent").addEventListener("change", submitterDifferent);
+    const pocFields = document.querySelectorAll('.bd-641368827177c-poc');
+    for (let i = 0; i < pocFields.length; i++) {
+        pocFields[i].addEventListener('change', requesterPhoneEmailValidation);
+    }
 }
 initGrievanceForm();
 
 function submitGrievanceForm(e) {
     e.preventDefault();
 
-    const selectedForm = document.getElementById("bd-641368827177c-RAProgramType").value;
+    const selectedForm = document.getElementById("bd-641368827177c-RequestTypeID").value;
     let formId = false;
+    console.log(selectedForm);
 
-    if (selectedForm === "Grievance" || selectedForm === "Reasonable Accommodation") {
+    if (selectedForm == 3 || selectedForm == 4) {
         formId = "grievanceForm";
-        document.getElementById("bd-641368827177c-RequestTypeID").value = selectedForm === "Grievance" ? 3 : 4;
-    } else if (selectedForm === "Audio/Video Recording Request") {
+    } else if (selectedForm == cf.requestTypeCamera) {
         formId = "raCameraForm";
-    } else if (selectedForm === "Interpreting Service Request") {
+    } else if (selectedForm == cf.requestTypeInterpreter) {
         formId = "raInterpreterForm";
     }
 
@@ -458,7 +496,6 @@ function submitGrievanceForm(e) {
         if (Object.keys(customFields).length > 0) {
             postObj['SubmitterDifferent'] = "yes";
         }
-        customFields[cf.RAProgramType] = selectedForm;
         postObj.ExtraData = { Custom: customFields };
 
         //POST to BlueDAG API
@@ -476,7 +513,6 @@ function submitGrievanceForm(e) {
         };
         xhr.open("POST", path + token);
         xhr.setRequestHeader("Content-Type", "application/json");
-        console.log(postObj); //testing
         xhr.send(JSON.stringify(postObj));
 
         document.getElementById("bd-grievance").innerHTML = "Submitting your grievance...";
@@ -495,6 +531,24 @@ function submitterDifferent(e) {
     }
 }
 
+function requesterPhoneEmailValidation(e) {
+    const formId = e.target.closest('form').getAttribute('id');
+    const form = document.querySelector('#' + formId);
+    const email = form.querySelector('[name="RequesterEmail"]');
+    const phone = form.querySelector('[name="RequesterPhone"]');
+
+    if (email.value.trim()) {
+        phone.removeAttribute('required');
+        email.setAttribute('required', true);
+    } else if (phone.value.trim()) {
+        email.removeAttribute('required');
+        phone.setAttribute('required', true);
+    } else {
+        email.setAttribute('required', true);
+        phone.setAttribute('required', true);
+    }
+}
+
 function swapGrievanceForms() {
     //get forms
     const grievanceForm = document.getElementById("bd-641368827177c-grievanceForm");
@@ -502,7 +556,7 @@ function swapGrievanceForms() {
     const interpreterForm = document.getElementById("bd-641368827177c-raInterpreterForm");
 
     //get the value of the request type
-    const selectedValue = document.getElementById("bd-641368827177c-RAProgramType").value;
+    const selectedValue = document.getElementById("bd-641368827177c-RequestTypeID").value;
 
     if (typeof selectedValue === "undefined") {
         return;
@@ -513,12 +567,12 @@ function swapGrievanceForms() {
     interpreterForm.style.display = "none";
 
     //show and hide the correct form
-    if (selectedValue === "Grievance" || selectedValue === "Reasonable Accommodation") {
-        document.getElementById("bd-641368827177c-grievanceFormTitle").innerHTML = selectedValue;
+    if (selectedValue == 3 || selectedValue == 4) {
+        document.getElementById("bd-641368827177c-grievanceFormTitle").innerHTML = selectedValue == 3 ? "Grievance" : "Reasonable Accommodation";
         grievanceForm.style.display = "block";
-    } else if (selectedValue === "Audio/Video Recording Request") {
+    } else if (selectedValue == cf.requestTypeCamera) {
         cameraForm.style.display = "block";
-    } else if (selectedValue === "Interpreting Service Request") {
+    } else if (selectedValue == cf.requestTypeInterpreter) {
         interpreterForm.style.display = "block";
     }
 }
