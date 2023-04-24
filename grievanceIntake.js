@@ -118,7 +118,7 @@ function initGrievanceForm() {
                         <label for="bd-641368827177c-SubmitterFirstName" class="bd-641368827177c-control-label">Name:</label>
                         <div class="bd-641368827177c-controls">
                             <input type="text" name="SubmitterFirstName" value="" id="bd-641368827177c-SubmitterFirstName" placeholder="First Name" />
-                            <input type="text" name="SubmitterLastName" value="" id="bd-641368827177c-SubmitterLastName" placeholder="Last Name" aria-label="Last Name" required />
+                            <input type="text" name="SubmitterLastName" value="" id="bd-641368827177c-SubmitterLastName" placeholder="Last Name" aria-label="Last Name" />
                         </div>
                     </div>
                     <div class="bd-641368827177c-control-group">
