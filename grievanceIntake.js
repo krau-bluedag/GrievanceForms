@@ -495,8 +495,8 @@ function submitGrievanceForm(e) {
         }
         if (Object.keys(customFields).length > 0) {
             postObj['SubmitterDifferent'] = "yes";
+            postObj.ExtraData = { Custom: customFields };
         }
-        postObj.ExtraData = { Custom: customFields };
 
         //POST to BlueDAG API
         var xhr = new XMLHttpRequest();
