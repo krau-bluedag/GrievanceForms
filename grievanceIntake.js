@@ -375,7 +375,7 @@ function initGrievanceForm() {
                 <div class="bd-641368827177c-control-group">
                     <label for="bd-641368827177c-raInterpreterForm-SubmitterPhone" class="bd-641368827177c-control-label">Contact Phone:</label>
                     <div class="bd-641368827177c-controls">
-                        <input type="email" name="SubmitterPhone" class="bd-641368827177c-poc" value="" id="bd-641368827177c-raInterpreterForm-SubmitterPhone" required />
+                        <input type="tel" name="SubmitterPhone" class="bd-641368827177c-poc" value="" id="bd-641368827177c-raInterpreterForm-SubmitterPhone" required />
                     </div>
                 </div>
                 <div class="bd-641368827177c-control-group">
