@@ -530,12 +530,23 @@ function submitterDifferent(e) {
     if (typeof isSubmitterDifferent !== "undefined") {
         let submitterFields = document.getElementById("bd-641368827177c-submitterDetails");
         if (typeof submitterFields !== "undefined") {
-            const isRequired = isSubmitterDifferent == "yes";
-            submitterFields.style.display = isRequired ? "block" : "none";
             const submitterEmail = document.getElementById("bd-641368827177c-SubmitterEmail");
-            submitterEmail.setAttribute('required', isRequired);
             const submitterPhone = document.getElementById("bd-641368827177c-SubmitterPhone");
-            submitterPhone.setAttribute('required', isRequired);
+            const submitterFirstName = document.getElementById("bd-641368827177c-SubmitterFirstName");
+            const submitterLastName = document.getElementById("bd-641368827177c-SubmitterLastName");
+            if (isSubmitterDifferent == "yes") {
+                submitterFields.style.display = "block";
+                submitterFirstName.setAttribute('required', true);
+                submitterLastName.setAttribute('required', true);
+                submitterEmail.setAttribute('required', true);
+                submitterPhone.setAttribute('required', true);
+            } else {
+                submitterFields.style.display = "none";
+                submitterFirstName.removeAttribute('required');
+                submitterLastName.removeAttribute('required');
+                submitterEmail.removeAttribute('required');
+                submitterPhone.removeAttribute('required');
+            }
         }
     }
 }
