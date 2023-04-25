@@ -124,13 +124,13 @@ function initGrievanceForm() {
                     <div class="bd-641368827177c-control-group">
                         <label for="bd-641368827177c-SubmitterPhone" class="bd-641368827177c-control-label">Phone Number:</label>
                         <div class="bd-641368827177c-controls">
-                            <input type="tel" name="SubmitterPhone" class="bd-641368827177c-poc" value="" id="bd-641368827177c-SubmitterPhone" />
+                            <input type="tel" name="SubmitterPhone" class="bd-641368827177c-poc" data-submitter="1" value="" id="bd-641368827177c-SubmitterPhone" />
                         </div>
                     </div>
                     <div class="bd-641368827177c-control-group">
                         <label for="bd-641368827177c-SubmitterEmail" class="bd-641368827177c-control-label">Email:</label>
                         <div class="bd-641368827177c-controls">
-                            <input type="email" name="SubmitterEmail" class="bd-641368827177c-poc" value="" id="bd-641368827177c-SubmitterEmail" />
+                            <input type="email" name="SubmitterEmail" class="bd-641368827177c-poc" data-submitter="1" value="" id="bd-641368827177c-SubmitterEmail" />
                         </div>
                     </div>
                     <div class="bd-641368827177c-control-group">
@@ -375,13 +375,13 @@ function initGrievanceForm() {
                 <div class="bd-641368827177c-control-group">
                     <label for="bd-641368827177c-raInterpreterForm-SubmitterPhone" class="bd-641368827177c-control-label">Contact Phone:</label>
                     <div class="bd-641368827177c-controls">
-                        <input type="tel" name="SubmitterPhone" class="bd-641368827177c-poc" value="" id="bd-641368827177c-raInterpreterForm-SubmitterPhone" required />
+                        <input type="tel" name="SubmitterPhone" class="bd-641368827177c-poc" data-submitter="1" value="" id="bd-641368827177c-raInterpreterForm-SubmitterPhone" required />
                     </div>
                 </div>
                 <div class="bd-641368827177c-control-group">
                     <label for="bd-641368827177c-raInterpreterForm-SubmitterEmail" class="bd-641368827177c-control-label">Contact Email:</label>
                     <div class="bd-641368827177c-controls">
-                        <input type="email" name="SubmitterEmail" class="bd-641368827177c-poc" value="" id="bd-641368827177c-raInterpreterForm-SubmitterEmail" required />
+                        <input type="email" name="SubmitterEmail" class="bd-641368827177c-poc" data-submitter="1" value="" id="bd-641368827177c-raInterpreterForm-SubmitterEmail" required />
                     </div>
                 </div>
                 <div class="bd-641368827177c-control-group">
@@ -562,10 +562,11 @@ function submitterDifferent(e) {
 }
 
 function requesterPhoneEmailValidation(e) {
+    const type = e.target.dataset.submitter ? "Submitter" : "Requester";
     const formId = e.target.closest('form').getAttribute('id');
     const form = document.querySelector('#' + formId);
-    const email = form.querySelector('[name="RequesterEmail"]');
-    const phone = form.querySelector('[name="RequesterPhone"]');
+    const email = form.querySelector('[name="'+type+'Email"]');
+    const phone = form.querySelector('[name="'+type+'Phone"]');
 
     if (email.value.trim()) {
         phone.removeAttribute('required');
