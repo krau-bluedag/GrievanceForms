@@ -124,13 +124,18 @@ function initGrievanceForm() {
                     <div class="bd-641368827177c-control-group">
                         <label for="bd-641368827177c-SubmitterPhone" class="bd-641368827177c-control-label">Phone Number:</label>
                         <div class="bd-641368827177c-controls">
-                            <input type="tel" name="SubmitterPhone" value="" id="bd-641368827177c-SubmitterPhone" />
+                            <input type="tel" name="SubmitterPhone" class="bd-641368827177c-poc" value="" id="bd-641368827177c-SubmitterPhone" />
                         </div>
                     </div>
                     <div class="bd-641368827177c-control-group">
                         <label for="bd-641368827177c-SubmitterEmail" class="bd-641368827177c-control-label">Email:</label>
                         <div class="bd-641368827177c-controls">
-                            <input type="email" name="SubmitterEmail" value="" id="bd-641368827177c-SubmitterEmail" />
+                            <input type="email" name="SubmitterEmail" class="bd-641368827177c-poc" value="" id="bd-641368827177c-SubmitterEmail" />
+                        </div>
+                    </div>
+                    <div class="bd-641368827177c-control-group">
+                        <div class="bd-641368827177c-controls">
+                            <span class="bd-641368827177c-required-label">*</span> Please provide either an email or phone number.
                         </div>
                     </div>
                     <div class="bd-641368827177c-control-group" style="margin-bottom: 10px;">
@@ -525,7 +530,12 @@ function submitterDifferent(e) {
     if (typeof isSubmitterDifferent !== "undefined") {
         let submitterFields = document.getElementById("bd-641368827177c-submitterDetails");
         if (typeof submitterFields !== "undefined") {
-            submitterFields.style.display = isSubmitterDifferent == "yes" ? "block" : "none";
+            const isRequired = isSubmitterDifferent == "yes";
+            submitterFields.style.display = isRequired ? "block" : "none";
+            const submitterEmail = document.getElementById("bd-641368827177c-SubmitterEmail");
+            submitterEmail.setAttribute('required', isRequired);
+            const submitterPhone = document.getElementById("bd-641368827177c-SubmitterPhone");
+            submitterPhone.setAttribute('required', isRequired);
         }
     }
 }
