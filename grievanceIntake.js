@@ -213,7 +213,6 @@ function initGrievanceForm() {
             </div>
         </form>
         <form id="bd-641368827177c-raCameraForm" accept-charset="utf-8" style="display:none;">
-            <input type="hidden" name="RequestTypeID" value="4" />
             <h3>Audio/Video Recording Request</h3>
             <div>
                 <p>Consistent with La. R.S. 17:1948, a parent or legal guardian may request the installation of an audio and video camera in a special education self-contained classroom or other special education setting. For more information, please visit the Exceptional Student Services webpage. This request will be in effect for one academic year.</p>
@@ -332,7 +331,6 @@ function initGrievanceForm() {
             </ul>
         </form>
         <form id="bd-641368827177c-raInterpreterForm" accept-charset="utf-8" style="display:none;">
-            <input type="hidden" name="RequestTypeID" value="4" />
             <h3>Interpreting Service Request</h3>
             <div>
                 <h4>Requester Information</h4>
@@ -481,7 +479,8 @@ function submitGrievanceForm(e) {
     form.classList.add('validated');
     if (form.checkValidity()) {
         const formFields = document.getElementById("bd-641368827177c-" + formId).elements;
-        let postObj = {};
+        const selectedForm = document.getElementById("bd-641368827177c-RequestTypeID").value;
+        let postObj = { RequestTypeID: selectedForm };
         let customFields = {};
         for (let i = 0; i < formFields.length; i++) {
             const item = formFields.item(i);
