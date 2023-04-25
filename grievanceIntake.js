@@ -115,7 +115,7 @@ function initGrievanceForm() {
                     <hr />
                     <h4>Submitter Information</h4>
                     <div class="bd-641368827177c-control-group">
-                        <label for="bd-641368827177c-SubmitterFirstName" class="bd-641368827177c-control-label">Name:</label>
+                        <label for="bd-641368827177c-SubmitterFirstName" class="bd-641368827177c-control-label"><span class="bd-641368827177c-required-label">*</span> Name:</label>
                         <div class="bd-641368827177c-controls">
                             <input type="text" name="SubmitterFirstName" value="" id="bd-641368827177c-SubmitterFirstName" placeholder="First Name" />
                             <input type="text" name="SubmitterLastName" value="" id="bd-641368827177c-SubmitterLastName" placeholder="Last Name" aria-label="Last Name" />
@@ -336,6 +336,7 @@ function initGrievanceForm() {
             </ul>
         </form>
         <form id="bd-641368827177c-raInterpreterForm" accept-charset="utf-8" style="display:none;">
+            <input type="hidden" name="SubmitterDifferent" value="yes" />
             <h3>Interpreting Service Request</h3>
             <div>
                 <h4>Requester Information</h4>
@@ -372,9 +373,20 @@ function initGrievanceForm() {
                     </div>
                 </div>
                 <div class="bd-641368827177c-control-group">
+                    <label for="bd-641368827177c-raInterpreterForm-SubmitterPhone" class="bd-641368827177c-control-label">Contact Phone:</label>
+                    <div class="bd-641368827177c-controls">
+                        <input type="email" name="SubmitterPhone" class="bd-641368827177c-poc" value="" id="bd-641368827177c-raInterpreterForm-SubmitterPhone" />
+                    </div>
+                </div>
+                <div class="bd-641368827177c-control-group">
                     <label for="bd-641368827177c-raInterpreterForm-SubmitterEmail" class="bd-641368827177c-control-label">Contact Email:</label>
                     <div class="bd-641368827177c-controls">
-                        <input type="email" name="SubmitterEmail" value="" id="bd-641368827177c-raInterpreterForm-SubmitterEmail" />
+                        <input type="email" name="SubmitterEmail" class="bd-641368827177c-poc" value="" id="bd-641368827177c-raInterpreterForm-SubmitterEmail" />
+                    </div>
+                </div>
+                <div class="bd-641368827177c-control-group">
+                    <div class="bd-641368827177c-controls">
+                        <span class="bd-641368827177c-required-label">*</span> Please provide either an email or phone number.
                     </div>
                 </div>
                 <h4>Location Information</h4>
@@ -466,7 +478,6 @@ function submitGrievanceForm(e) {
 
     const selectedForm = document.getElementById("bd-641368827177c-RequestTypeID").value;
     let formId = false;
-    console.log(selectedForm);
 
     if (selectedForm == 3 || selectedForm == 4) {
         formId = "grievanceForm";
@@ -498,7 +509,6 @@ function submitGrievanceForm(e) {
             }
         }
         if (Object.keys(customFields).length > 0) {
-            postObj['SubmitterDifferent'] = "yes";
             postObj.ExtraData = { Custom: customFields };
         }
 
