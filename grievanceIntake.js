@@ -366,7 +366,7 @@ function initGrievanceForm() {
                 </div>
                 <h4>Contact Information</h4>
                 <div class="bd-641368827177c-control-group">
-                    <label for="bd-641368827177c-raInterpreterForm-SubmitterFirstName" class="bd-641368827177c-control-label">Contact Person/Doctor:</label>
+                    <label for="bd-641368827177c-raInterpreterForm-SubmitterFirstName" class="bd-641368827177c-control-label"><span class="bd-641368827177c-required-label">*</span> Contact Person/Doctor:</label>
                     <div class="bd-641368827177c-controls">
                         <input type="text" name="SubmitterFirstName" value="" id="bd-641368827177c-raInterpreterForm-SubmitterFirstName" placeholder="First Name" required />
                         <input type="text" name="SubmitterLastName" value="" id="bd-641368827177c-SubmitterLastName" placeholder="Last Name" aria-label="Last Name" required />
