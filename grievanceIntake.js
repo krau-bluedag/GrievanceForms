@@ -23,8 +23,8 @@ var cf = {
     RoomNumber: 813,
     Teacher: 818,
     FloorNumber: 812,
-    requestTypeGrievance: 6,
-    requestTypeReasonableAccomodation: 7,
+    requestTypeGrievance: 6, //3
+    requestTypeReasonableAccomodation: 7, //4
     requestTypeCamera: 8,
     requestTypeInterpreter: 9,
 };
@@ -600,7 +600,7 @@ function swapGrievanceForms() {
     interpreterForm.style.display = "none";
 
     //show and hide the correct form
-    if (selectedValue == 3 || selectedValue == 4) {
+    if (selectedValue == cf.requestTypeGrievance || selectedValue == cf.requestTypeReasonableAccomodation) {
         document.getElementById("bd-641368827177c-grievanceFormTitle").innerHTML = selectedValue == 3 ? "Grievance" : "Reasonable Accommodation";
         grievanceForm.style.display = "block";
     } else if (selectedValue == cf.requestTypeCamera) {
