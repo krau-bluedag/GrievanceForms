@@ -481,7 +481,7 @@ function submitGrievanceForm(e) {
     const selectedForm = document.getElementById("bd-641368827177c-RequestTypeID").value;
     let formId = false;
 
-    if (selectedForm == 3 || selectedForm == 4) {
+    if (selectedForm == cf.requestTypeGrievance || selectedForm == cf.requestTypeReasonableAccomodation) {
         formId = "grievanceForm";
     } else if (selectedForm == cf.requestTypeCamera) {
         formId = "raCameraForm";
@@ -601,7 +601,7 @@ function swapGrievanceForms() {
 
     //show and hide the correct form
     if (selectedValue == cf.requestTypeGrievance || selectedValue == cf.requestTypeReasonableAccomodation) {
-        document.getElementById("bd-641368827177c-grievanceFormTitle").innerHTML = selectedValue == 3 ? "Grievance" : "Reasonable Accommodation";
+        document.getElementById("bd-641368827177c-grievanceFormTitle").innerHTML = selectedValue == cf.requestTypeGrievance ? "Grievance" : "Reasonable Accommodation";
         grievanceForm.style.display = "block";
     } else if (selectedValue == cf.requestTypeCamera) {
         cameraForm.style.display = "block";
