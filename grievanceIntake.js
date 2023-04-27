@@ -23,8 +23,10 @@ var cf = {
     RoomNumber: 813,
     Teacher: 818,
     FloorNumber: 812,
-    requestTypeCamera: 10, //for internal.dev
-    requestTypeInterpreter: 11 //for internal.dev
+    requestTypeGrievance: 6,
+    requestTypeReasonableAccomodation: 7,
+    requestTypeCamera: 8,
+    requestTypeInterpreter: 9,
 };
 function initGrievanceForm() {
     //build Grievance form
@@ -64,8 +66,8 @@ function initGrievanceForm() {
                     <span>
                         <select name="RequestTypeID" id="bd-641368827177c-RequestTypeID" required>
                             <option value="" selected="selected">Please Select...</option>
-                            <option value="3">Grievance</option>
-                            <option value="4">Reasonable Accommodation</option>
+                            <option value="${cf.requestTypeGrievance}">Grievance</option>
+                            <option value="${cf.requestTypeReasonableAccomodation}">Reasonable Accommodation</option>
                             <option value="${cf.requestTypeCamera}">Audio/Video Recording Request</option>
                             <option value="${cf.requestTypeInterpreter}">Interpreting Service Request</option>
                         </select>
