@@ -1,22 +1,24 @@
-//var path = "https:\/\/api.bluedag.com\/js\/grievance\/submit?jsAuth="; //production
+var path = "https:\/\/api.bluedag.com\/js\/grievance\/submit?jsAuth="; //production
 //var path = "https:\/\/api.dev.bluedag.com\/js\/grievance\/submit?jsAuth="; //dev
-var path = "https:\/\/api.staging.bluedag.com\/js\/grievance\/submit?jsAuth="; //qa
-//var token = "9t5dioDO9dnA92TNYXpErh9gsF3mvTxVJEjw2O0NOMGLz9DiY4q4uuFFThyNvDPy"; //production
+//var path = "https:\/\/api.staging.bluedag.com\/js\/grievance\/submit?jsAuth="; //qa
+var token = "9t5dioDO9dnA92TNYXpErh9gsF3mvTxVJEjw2O0NOMGLz9DiY4q4uuFFThyNvDPy"; //production
 //var token = "Bj0twoiOr3hGp0imzwFmYvVXoeK9SftCBwMBaYZR8Ww4Y4MgQAR8ZoZbw35kx1lp"; //dev
-var token = "MnRX9YvpPXwY6lpOfSeAaLBJus5ok5Lvet6gXq0rSfUQOmtGrWcBC6IfnSmtsH1R"; //qa
+//var token = "MnRX9YvpPXwY6lpOfSeAaLBJus5ok5Lvet6gXq0rSfUQOmtGrWcBC6IfnSmtsH1R"; //qa
 //PROD
-// var cf = {
-//     AcademicYear: 1923,
-//     RelationshipToChild: 1928,
-//     ChildName: 1926,
-//     Dob: 1927,
-//     Grade: 1929, 
-//     RoomNumber: 1925,
-//     Teacher: 1930,
-//     FloorNumber: 1924,
-//     requestTypeCamera: 10, //for internal.dev
-//     requestTypeInterpreter: 11 //for internal.dev
-// };
+var cf = {
+    AcademicYear: 1923,
+    RelationshipToChild: 1928,
+    ChildName: 1926,
+    Dob: 1927,
+    Grade: 1929, 
+    RoomNumber: 1925,
+    Teacher: 1930,
+    FloorNumber: 1924,
+    requestTypeGrievance: 6,
+    requestTypeReasonableAccomodation: 7,
+    requestTypeCamera: 8,
+    requestTypeInterpreter: 9
+};
 //DEV
 // var cf = {
 //     AcademicYear: 811,
@@ -33,20 +35,20 @@ var token = "MnRX9YvpPXwY6lpOfSeAaLBJus5ok5Lvet6gXq0rSfUQOmtGrWcBC6IfnSmtsH1R"; 
 //     requestTypeInterpreter: 9,
 // };
 //QA
-var cf = {
-    AcademicYear: 796,
-    FloorNumber: 797,
-    RoomNumber: 798,
-    ChildName: 799,
-    Dob: 800,
-    RelationshipToChild: 801,
-    Grade: 802, 
-    Teacher: 803,
-    requestTypeGrievance: 6, //3
-    requestTypeReasonableAccomodation: 7, //4
-    requestTypeCamera: 8,
-    requestTypeInterpreter: 9,
-};
+// var cf = {
+//     AcademicYear: 796,
+//     FloorNumber: 797,
+//     RoomNumber: 798,
+//     ChildName: 799,
+//     Dob: 800,
+//     RelationshipToChild: 801,
+//     Grade: 802, 
+//     Teacher: 803,
+//     requestTypeGrievance: 6, //3
+//     requestTypeReasonableAccomodation: 7, //4
+//     requestTypeCamera: 8,
+//     requestTypeInterpreter: 9,
+// };
 function initGrievanceForm() {
     //build Grievance form
     let grievanceTemplate = `
