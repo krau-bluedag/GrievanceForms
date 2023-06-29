@@ -540,6 +540,7 @@ function submitGrievanceForm(e) {
         xhr.responseType = "json";
         xhr.onreadystatechange = function () {
             if (this.readyState == 4) {
+                console.log(this);
                 if (this.status == 200) {
                     document.getElementById("bd-grievance").innerHTML = "Your grievance has been submitted.";
                 } else {
