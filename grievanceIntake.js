@@ -27,13 +27,10 @@ function initGrievanceForm() {
             <div>
                 <h4>Requester Information</h4>
                 <div class="bd-64dbc763a2201-control-group">
-                    <label for="bd-64dbc763a2201-RequesterFirstName" class="bd-64dbc763a2201-control-label"><span class="bd-64dbc763a2201-required-label">*</span> First Name:</label>
+                    <label for="bd-64dbc763a2201-RequesterName" class="bd-64dbc763a2201-control-label"><span class="bd-64dbc763a2201-required-label">*</span> Name:</label>
                     <div class="bd-64dbc763a2201-controls">
-                        <input type="text" name="RequesterFirstName" value="" id="bd-64dbc763a2201-RequesterFirstName" required />
-                    </div>
-                    <label for="bd-64dbc763a2201-RequesterLastName" class="bd-64dbc763a2201-control-label"><span class="bd-64dbc763a2201-required-label">*</span> Last Name:</label>
-                    <div class="bd-64dbc763a2201-controls">
-                        <input type="text" name="RequesterLastName" value="" id="bd-64dbc763a2201-RequesterLastName" required />
+                        <input type="text" name="RequesterFirstName" value="" id="bd-64dbc763a2201-RequesterFirstName" placeholder="First Name" required />
+                        <input type="text" name="RequesterLastName" value="" id="bd-64dbc763a2201-RequesterLastName" placeholder="Last Name" aria-label="Last Name" required />
                     </div>
                 </div>
                 <div class="bd-64dbc763a2201-control-group">
@@ -61,7 +58,8 @@ function initGrievanceForm() {
                     <div class="bd-64dbc763a2201-control-group">
                         <label for="bd-64dbc763a2201-SubmitterName" class="bd-64dbc763a2201-control-label">Name:</label>
                         <div class="bd-64dbc763a2201-controls">
-                            <input type="text" name="SubmitterName" value="" id="bd-64dbc763a2201-SubmitterName" />
+                            <input type="text" name="SubmitterFirstName" value="" id="bd-64dbc763a2201-SubmitterFirstName" placeholder="First Name" required />
+                            <input type="text" name="SubmitterLastName" value="" id="bd-64dbc763a2201-SubmitterLastName" placeholder="Last Name" aria-label="Last Name" required />
                         </div>
                     </div>
                     <div class="bd-64dbc763a2201-control-group">
