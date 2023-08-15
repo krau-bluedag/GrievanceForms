@@ -27,9 +27,13 @@ function initGrievanceForm() {
             <div>
                 <h4>Requester Information</h4>
                 <div class="bd-64dbc763a2201-control-group">
-                    <label for="bd-64dbc763a2201-RequesterName" class="bd-64dbc763a2201-control-label"><span class="bd-64dbc763a2201-required-label">*</span> Name:</label>
+                    <label for="bd-64dbc763a2201-RequesterFirstName" class="bd-64dbc763a2201-control-label"><span class="bd-64dbc763a2201-required-label">*</span> First Name:</label>
                     <div class="bd-64dbc763a2201-controls">
-                        <input type="text" name="RequesterName" value="" id="bd-64dbc763a2201-RequesterName" required />
+                        <input type="text" name="RequesterFirstName" value="" id="bd-64dbc763a2201-RequesterFirstName" required />
+                    </div>
+                    <label for="bd-64dbc763a2201-RequesterLastName" class="bd-64dbc763a2201-control-label"><span class="bd-64dbc763a2201-required-label">*</span> Last Name:</label>
+                    <div class="bd-64dbc763a2201-controls">
+                        <input type="text" name="RequesterLastName" value="" id="bd-64dbc763a2201-RequesterLastName" required />
                     </div>
                 </div>
                 <div class="bd-64dbc763a2201-control-group">
