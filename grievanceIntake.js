@@ -196,10 +196,15 @@ function submitGrievanceForm(e) {
         xhr.responseType = "json";
         xhr.onreadystatechange = function () {
             if (this.readyState == 4) {
+                let failureContent = "An error occurred while submitting your grievance. Please try again later. <button onclick=\"window.location.reload()\">Retry</button>";
                 if (this.status == 200) {
-                    document.getElementById("bd-grievance").innerHTML = "Your grievance has been submitted.";
+                    if (this.response.success) {
+                        document.getElementById("bd-grievance").innerHTML = "Your grievance has been submitted.";
+                    } else {
+                        console.log(this.response.message);
+                        document.getElementById("bd-grievance").innerHTML = failureContent;
+                    }
                 } else {
-                    let failureContent = "An error occurred while submitting your grievance. Please try again later. <button onclick=\"window.location.reload()\">Retry</button>";
                     document.getElementById("bd-grievance").innerHTML = failureContent;
                 }
             }
