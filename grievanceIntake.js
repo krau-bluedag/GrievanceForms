@@ -173,7 +173,7 @@ function initGrievanceForm() {
     document.getElementById("bd-64dbc763a2201-grievanceFormSubmitBtn").addEventListener("click", submitGrievanceForm);
     document.getElementById("bd-64dbc763a2201-SubmitterDifferent_Yes").addEventListener("change", submitterDifferent);
     document.getElementById("bd-64dbc763a2201-SubmitterDifferent_No").addEventListener("change", submitterDifferent);
-    const pocFields = document.querySelectorAll('.<?= $prefix ?>-poc');
+    const pocFields = document.querySelectorAll('.bd-64dbc763a2201-poc');
     for (let i = 0; i < pocFields.length; i++) {
         pocFields[i].addEventListener('change', requesterPhoneEmailValidation);
     }
@@ -200,6 +200,7 @@ function submitGrievanceForm(e) {
                 }
             }
         }
+        console.log(postObj);
 
         //POST to BlueDAG API
         var xhr = new XMLHttpRequest();
@@ -230,9 +231,9 @@ function submitGrievanceForm(e) {
 function submitterDifferent(e) {
     const isSubmitterDifferent = e.target.value;
     if (typeof isSubmitterDifferent !== "undefined") {
-        let submitterFields = document.getElementById("<?= $prefix ?>-submitterDetails");
-        let submitterFirstNameField = document.getElementById("<?= $prefix ?>-SubmitterFirstName");
-        let submitterLastNameField = document.getElementById("<?= $prefix ?>-SubmitterLastName");
+        let submitterFields = document.getElementById("bd-64dbc763a2201-submitterDetails");
+        let submitterFirstNameField = document.getElementById("bd-64dbc763a2201-SubmitterFirstName");
+        let submitterLastNameField = document.getElementById("bd-64dbc763a2201-SubmitterLastName");
 
         if (typeof submitterFields !== "undefined") {
             if (isSubmitterDifferent === "yes") {
