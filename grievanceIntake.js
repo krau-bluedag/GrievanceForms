@@ -36,13 +36,18 @@ function initGrievanceForm() {
                 <div class="bd-64dbc763a2201-control-group">
                     <label for="bd-64dbc763a2201-RequesterPhone" class="bd-64dbc763a2201-control-label">Phone Number:</label>
                     <div class="bd-64dbc763a2201-controls">
-                        <input type="tel" name="RequesterPhone" value="" class="bd-64dbc763a2201-poc" id="bd-64dbc763a2201-RequesterPhone" />
+                        <input type="tel" name="RequesterPhone" value="" class="bd-64dbc763a2201-poc" id="bd-64dbc763a2201-RequesterPhone" required />
                     </div>
                 </div>
                 <div class="bd-64dbc763a2201-control-group">
                     <label for="bd-64dbc763a2201-RequesterEmail" class="bd-64dbc763a2201-control-label">Email:</label>
                     <div class="bd-64dbc763a2201-controls">
-                        <input type="email" name="RequesterEmail" value="" class="bd-64dbc763a2201-poc" id="bd-64dbc763a2201-RequesterEmail" />
+                        <input type="email" name="RequesterEmail" value="" class="bd-64dbc763a2201-poc" id="bd-64dbc763a2201-RequesterEmail" required />
+                    </div>
+                </div>
+                <div class="bd-64dbc763a2201-control-group">
+                    <div class="bd-64dbc763a2201-controls">
+                        <span class="bd-64dbc763a2201-required-label">*</span> Please provide either an email or phone number.
                     </div>
                 </div>
                 <div class="bd-64dbc763a2201-control-group">
@@ -72,6 +77,11 @@ function initGrievanceForm() {
                         <label for="bd-64dbc763a2201-SubmitterEmail" class="bd-64dbc763a2201-control-label">Email:</label>
                         <div class="bd-64dbc763a2201-controls">
                             <input type="email" name="SubmitterEmail" value="" class="bd-64dbc763a2201-poc" id="bd-64dbc763a2201-SubmitterEmail" data-submitter="1" />
+                        </div>
+                    </div>
+                    <div class="bd-64dbc763a2201-control-group">
+                        <div class="bd-64dbc763a2201-controls">
+                            <span class="bd-64dbc763a2201-required-label">*</span> Please provide either an email or phone number.
                         </div>
                     </div>
                     <div class="bd-64dbc763a2201-control-group" style="margin-bottom: 10px;">
@@ -234,16 +244,28 @@ function submitterDifferent(e) {
         let submitterFields = document.getElementById("bd-64dbc763a2201-submitterDetails");
         let submitterFirstNameField = document.getElementById("bd-64dbc763a2201-SubmitterFirstName");
         let submitterLastNameField = document.getElementById("bd-64dbc763a2201-SubmitterLastName");
+        let submitterEmail = document.getElementById("bd-64dbc763a2201-SubmitterEmail");
+        let submitterPhone = document.getElementById("bd-64dbc763a2201-SubmitterPhone");
 
         if (typeof submitterFields !== "undefined") {
             if (isSubmitterDifferent === "yes") {
                 submitterFields.style.display = "block";
                 if (submitterFirstNameField !== null) submitterFirstNameField.required = true;
                 if (submitterLastNameField !== null) submitterLastNameField.required = true;
+                if (submitterEmail !== null) {
+                    submitterEmail.required = true;
+                    submitterEmail.value = '';
+                }
+                if (submitterPhone !== null) {
+                    submitterPhone.required = true;
+                    submitterPhone.value = '';
+                }
             } else {
                 submitterFields.style.display = "none";
                 if (submitterFirstNameField !== null) submitterFirstNameField.required = false;
                 if (submitterLastNameField !== null) submitterLastNameField.required = false;
+                if (submitterEmail !== null) submitterEmail.required = false;
+                if (submitterPhone !== null) submitterPhone.required = false;
             }
         }
     }
