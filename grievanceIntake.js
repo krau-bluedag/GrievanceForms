@@ -2,66 +2,66 @@ function initGrievanceForm() {
     //build Grievance form
     let grievanceTemplate = `
         <style>
-            .bd-666766d93aefb-control {
+            .bd-6667685bf2651-control {
                 margin-top: 10px;
             }
-            .bd-666766d93aefb-control-label
-            .bd-666766d93aefb-control-label-inline {
+            .bd-6667685bf2651-control-label,
+            .bd-6667685bf2651-control-label-inline {
                 font-weight: bold;
             }
-            .bd-666766d93aefb-control-label-inline {
+            .bd-6667685bf2651-control-label-inline {
                 width: 140px;
                 float: left;
             }
-            #bd-666766d93aefb-grievanceForm.validated input:invalid,
-            #bd-666766d93aefb-grievanceForm.validated select:invalid {
+            #bd-6667685bf2651-grievanceForm.validated input:invalid,
+            #bd-6667685bf2651-grievanceForm.validated select:invalid {
                 border: 1px solid red;
             }
-            .bd-666766d93aefb-required-label {
+            .bd-6667685bf2651-required-label {
                 color: red;
             }
-            .bd-666766d93aefb-table {
+            .bd-6667685bf2651-table {
                 border-collapse: collapse;
                 width: 100%;
             }
-            .bd-666766d93aefb-table th,
-            .bd-666766d93aefb-table td {
+            .bd-6667685bf2651-table th,
+            .bd-6667685bf2651-table td {
                 padding: 8px;
                 text-align: left;
             }
-            .bd-666766d93aefb-table td {
+            .bd-6667685bf2651-table td {
                 border: 1px solid black;
             }
-            #bd-666766d93aefb-grievanceForm h4 {
+            #bd-6667685bf2651-grievanceForm h4 {
                 text-align: center;
             }
-            #bd-666766d93aefb-grievance-type-options {
+            #bd-6667685bf2651-grievance-type-options {
                 margin-left: 10px;
                 padding-top: 5px;
                 padding-bottom: 5px;
             }
-            #bd-666766d93aefb-grievance-type-container {
+            #bd-6667685bf2651-grievance-type-container {
                 border: 1px solid black;
                 padding: 8px;
             }
-            #bd-666766d93aefb-grievanceFormSubmitContainer {
+            #bd-6667685bf2651-grievanceFormSubmitContainer {
                 margin-top: 10px;
                 text-align: center;
             }
-            #bd-666766d93aefb-grievanceFormSubmitBtn {
+            #bd-6667685bf2651-grievanceFormSubmitBtn {
                 padding: 8px;
             }
-            #bd-666766d93aefb-grievanceForm textarea {
+            #bd-6667685bf2651-grievanceForm textarea {
                 width: 100%;
             }
-            #bd-666766d93aefb-grievanceForm select{
+            #bd-6667685bf2651-grievanceForm select{
                 height: 21px;
             }
         </style>
-        <form id="bd-666766d93aefb-grievanceForm" accept-charset="utf-8">
-            <div id="bd-666766d93aefb-grievance-type-container">
-                <div class="bd-666766d93aefb-control-label">Type of Grievance (select any that apply):</div>
-                <div id="bd-666766d93aefb-grievance-type-options">
+        <form id="bd-6667685bf2651-grievanceForm" accept-charset="utf-8">
+            <div id="bd-6667685bf2651-grievance-type-container">
+                <div class="bd-6667685bf2651-control-label">Type of Grievance (select any that apply):</div>
+                <div id="bd-6667685bf2651-grievance-type-options">
                     <div>
                         <label><input type="checkbox" name="GrievanceType[]" value="Accommodation Request" /> Accommodation Request</label>
                     </div>
@@ -77,13 +77,13 @@ function initGrievanceForm() {
                     </div>
                 </div>
                 <div>
-                    <label for="bd-666766d93aefb-cf_1235" class="bd-666766d93aefb-control-label">Department/Program:</label>
-                    <input type="email" name="cf_1235" value="" id="bd-666766d93aefb-cf_1235" required />
+                    <label for="bd-6667685bf2651-cf_1235" class="bd-6667685bf2651-control-label">Department/Program:</label>
+                    <input type="email" name="cf_1235" value="" id="bd-6667685bf2651-cf_1235" required />
                 </div>
             </div>
             <div>
                 <h4>CONTACT INFORMATION</h4>
-                <table class="bd-666766d93aefb-table">
+                <table class="bd-6667685bf2651-table">
                     <tr>
                         <th>Reporting Individual</th>
                         <th>On Behalf of:<br><sub>(if different than Reporting Individual)</sub></th>
@@ -92,118 +92,118 @@ function initGrievanceForm() {
                         <td>
                             <div><label>Full Name:</label></div>
                             <div>
-                                <input type="text" name="RequesterFirstName" value="" id="bd-666766d93aefb-RequesterFirstName" placeholder="First Name" aria-label="Reporting Individual First Name" required />
-                                <input type="text" name="RequesterLastName" value="" id="bd-666766d93aefb-RequesterLastName" placeholder="Last Name" aria-label="Reporting Individual Last Name" required />
+                                <input type="text" name="RequesterFirstName" value="" id="bd-6667685bf2651-RequesterFirstName" placeholder="First Name" aria-label="Reporting Individual First Name" required />
+                                <input type="text" name="RequesterLastName" value="" id="bd-6667685bf2651-RequesterLastName" placeholder="Last Name" aria-label="Reporting Individual Last Name" required />
                             </div>
                         </td>
                         <td>
                             <div><label>Full Name:</label></div>
                             <div>
-                                <input type="text" name="SubmitterFirstName" value="" id="bd-666766d93aefb-SubmitterFirstName" placeholder="First Name" aria-label="On Behalf of First Name" />
-                                <input type="text" name="SubmitterLastName" value="" id="bd-666766d93aefb-SubmitterLastName" placeholder="Last Name" aria-label="On Behalf of Last Name" />
+                                <input type="text" name="SubmitterFirstName" value="" id="bd-6667685bf2651-SubmitterFirstName" placeholder="First Name" aria-label="On Behalf of First Name" />
+                                <input type="text" name="SubmitterLastName" value="" id="bd-6667685bf2651-SubmitterLastName" placeholder="Last Name" aria-label="On Behalf of Last Name" />
                             </div>
                         </td>
                     </tr>
                     <tr>
                         <td>
                             <div><label>Address:</label></div>
-                            <div><input type="text" name="RequesterAddress" value="" id="bd-666766d93aefb-RequesterAddress" placeholder="Address" aria-label="Reporting Individual Address" /></div>
+                            <div><input type="text" name="RequesterAddress" value="" id="bd-6667685bf2651-RequesterAddress" placeholder="Address" aria-label="Reporting Individual Address" /></div>
                         </td>
                         <td>
                             <div><label>Address:</label></div>
-                            <div><input type="text" name="SubmitterAddress" value="" id="bd-666766d93aefb-SubmitterAddress" placeholder="Address" aria-label="On Behalf of Address" /></div>
+                            <div><input type="text" name="SubmitterAddress" value="" id="bd-6667685bf2651-SubmitterAddress" placeholder="Address" aria-label="On Behalf of Address" /></div>
                         </td>
                     </tr>
                     <tr>
                         <td>
                             <div><label>City, State, and Zip Code:</label></div>
                             <div>
-                                <input type="text" name="RequesterCity" value="" id="bd-666766d93aefb-RequesterCity" placeholder="City" aria-label="Reporting Individual City" required />
-                                <select name="RequesterState" id="bd-666766d93aefb-RequesterState" aria-label="Reporting Individual State" required><option value="AL">AL</option><option value="AK">AK</option><option value="AS">AS</option><option value="AZ">AZ</option><option value="AR">AR</option><option value="CA">CA</option><option value="CO">CO</option><option value="CT">CT</option><option value="DE">DE</option><option value="DC">DC</option><option value="FM">FM</option><option value="FL">FL</option><option value="GA">GA</option><option value="GU">GU</option><option value="HI">HI</option><option value="ID">ID</option><option value="IL">IL</option><option value="IN">IN</option><option value="IA">IA</option><option value="KS">KS</option><option value="KY">KY</option><option value="LA">LA</option><option value="ME">ME</option><option value="MH">MH</option><option value="MD">MD</option><option value="MA">MA</option><option value="MI">MI</option><option value="MN">MN</option><option value="MS">MS</option><option value="MO">MO</option><option value="MT">MT</option><option value="NE">NE</option><option value="NV">NV</option><option value="NH">NH</option><option value="NJ">NJ</option><option value="NM">NM</option><option value="NY">NY</option><option value="NC">NC</option><option value="ND">ND</option><option value="MP">MP</option><option value="OH">OH</option><option value="OK">OK</option><option value="OR">OR</option><option value="PW">PW</option><option value="PA">PA</option><option value="PR">PR</option><option value="RI">RI</option><option value="SC">SC</option><option value="SD">SD</option><option value="TN">TN</option><option value="TX">TX</option><option value="UT">UT</option><option value="VT">VT</option><option value="VI">VI</option><option value="VA">VA</option><option value="WA">WA</option><option value="WV">WV</option><option value="WI">WI</option><option value="WY">WY</option></select>
-                                <input type="text" name="RequesterZip" value="" id="bd-666766d93aefb-RequesterZip" placeholder="Zip Code" aria-label="Reporting Individual Zip Code" required />
+                                <input type="text" name="RequesterCity" value="" id="bd-6667685bf2651-RequesterCity" placeholder="City" aria-label="Reporting Individual City" required />
+                                <select name="RequesterState" id="bd-6667685bf2651-RequesterState" aria-label="Reporting Individual State" required><option value="AL">AL</option><option value="AK">AK</option><option value="AS">AS</option><option value="AZ">AZ</option><option value="AR">AR</option><option value="CA">CA</option><option value="CO">CO</option><option value="CT">CT</option><option value="DE">DE</option><option value="DC">DC</option><option value="FM">FM</option><option value="FL">FL</option><option value="GA">GA</option><option value="GU">GU</option><option value="HI">HI</option><option value="ID">ID</option><option value="IL">IL</option><option value="IN">IN</option><option value="IA">IA</option><option value="KS">KS</option><option value="KY">KY</option><option value="LA">LA</option><option value="ME">ME</option><option value="MH">MH</option><option value="MD">MD</option><option value="MA">MA</option><option value="MI">MI</option><option value="MN">MN</option><option value="MS">MS</option><option value="MO">MO</option><option value="MT">MT</option><option value="NE">NE</option><option value="NV">NV</option><option value="NH">NH</option><option value="NJ">NJ</option><option value="NM">NM</option><option value="NY">NY</option><option value="NC">NC</option><option value="ND">ND</option><option value="MP">MP</option><option value="OH">OH</option><option value="OK">OK</option><option value="OR">OR</option><option value="PW">PW</option><option value="PA">PA</option><option value="PR">PR</option><option value="RI">RI</option><option value="SC">SC</option><option value="SD">SD</option><option value="TN">TN</option><option value="TX">TX</option><option value="UT">UT</option><option value="VT">VT</option><option value="VI">VI</option><option value="VA">VA</option><option value="WA">WA</option><option value="WV">WV</option><option value="WI">WI</option><option value="WY">WY</option></select>
+                                <input type="text" name="RequesterZip" value="" id="bd-6667685bf2651-RequesterZip" placeholder="Zip Code" aria-label="Reporting Individual Zip Code" required />
                             </div>
                         </td>
                         <td>
                             <div><label>City, State, and Zip Code:</label></div>
                             <div>
-                                <input type="text" name="SubmitterCity" value="" id="bd-666766d93aefb-SubmitterCity" placeholder="City" aria-label="On Behalf of City" />
-                                <select name="SubmitterState" id="bd-666766d93aefb-SubmitterState" aria-label="On Behalf of State"><option value="AL">AL</option><option value="AK">AK</option><option value="AS">AS</option><option value="AZ">AZ</option><option value="AR">AR</option><option value="CA">CA</option><option value="CO">CO</option><option value="CT">CT</option><option value="DE">DE</option><option value="DC">DC</option><option value="FM">FM</option><option value="FL">FL</option><option value="GA">GA</option><option value="GU">GU</option><option value="HI">HI</option><option value="ID">ID</option><option value="IL">IL</option><option value="IN">IN</option><option value="IA">IA</option><option value="KS">KS</option><option value="KY">KY</option><option value="LA">LA</option><option value="ME">ME</option><option value="MH">MH</option><option value="MD">MD</option><option value="MA">MA</option><option value="MI">MI</option><option value="MN">MN</option><option value="MS">MS</option><option value="MO">MO</option><option value="MT">MT</option><option value="NE">NE</option><option value="NV">NV</option><option value="NH">NH</option><option value="NJ">NJ</option><option value="NM">NM</option><option value="NY">NY</option><option value="NC">NC</option><option value="ND">ND</option><option value="MP">MP</option><option value="OH">OH</option><option value="OK">OK</option><option value="OR">OR</option><option value="PW">PW</option><option value="PA">PA</option><option value="PR">PR</option><option value="RI">RI</option><option value="SC">SC</option><option value="SD">SD</option><option value="TN">TN</option><option value="TX">TX</option><option value="UT">UT</option><option value="VT">VT</option><option value="VI">VI</option><option value="VA">VA</option><option value="WA">WA</option><option value="WV">WV</option><option value="WI">WI</option><option value="WY">WY</option></select>
-                                <input type="text" name="SubmitterZip" value="" id="bd-666766d93aefb-SubmitterZip" placeholder="Zip Code" aria-label="On Behalf of Zip Code" />
+                                <input type="text" name="SubmitterCity" value="" id="bd-6667685bf2651-SubmitterCity" placeholder="City" aria-label="On Behalf of City" />
+                                <select name="SubmitterState" id="bd-6667685bf2651-SubmitterState" aria-label="On Behalf of State"><option value="AL">AL</option><option value="AK">AK</option><option value="AS">AS</option><option value="AZ">AZ</option><option value="AR">AR</option><option value="CA">CA</option><option value="CO">CO</option><option value="CT">CT</option><option value="DE">DE</option><option value="DC">DC</option><option value="FM">FM</option><option value="FL">FL</option><option value="GA">GA</option><option value="GU">GU</option><option value="HI">HI</option><option value="ID">ID</option><option value="IL">IL</option><option value="IN">IN</option><option value="IA">IA</option><option value="KS">KS</option><option value="KY">KY</option><option value="LA">LA</option><option value="ME">ME</option><option value="MH">MH</option><option value="MD">MD</option><option value="MA">MA</option><option value="MI">MI</option><option value="MN">MN</option><option value="MS">MS</option><option value="MO">MO</option><option value="MT">MT</option><option value="NE">NE</option><option value="NV">NV</option><option value="NH">NH</option><option value="NJ">NJ</option><option value="NM">NM</option><option value="NY">NY</option><option value="NC">NC</option><option value="ND">ND</option><option value="MP">MP</option><option value="OH">OH</option><option value="OK">OK</option><option value="OR">OR</option><option value="PW">PW</option><option value="PA">PA</option><option value="PR">PR</option><option value="RI">RI</option><option value="SC">SC</option><option value="SD">SD</option><option value="TN">TN</option><option value="TX">TX</option><option value="UT">UT</option><option value="VT">VT</option><option value="VI">VI</option><option value="VA">VA</option><option value="WA">WA</option><option value="WV">WV</option><option value="WI">WI</option><option value="WY">WY</option></select>
+                                <input type="text" name="SubmitterZip" value="" id="bd-6667685bf2651-SubmitterZip" placeholder="Zip Code" aria-label="On Behalf of Zip Code" />
                             </div>
                         </td>
                     </tr>
                     <tr>
                         <td>
                             <div><label>Phone:</label></div>
-                            <div><input type="tel" name="RequesterPhone" value="" class="bd-666766d93aefb-poc" id="bd-666766d93aefb-RequesterPhone" placeholder="Phone Number" aria-label="Reporting Individual Phone" required /></div>
+                            <div><input type="tel" name="RequesterPhone" value="" class="bd-6667685bf2651-poc" id="bd-6667685bf2651-RequesterPhone" placeholder="Phone Number" aria-label="Reporting Individual Phone" required /></div>
                         </td>
                         <td>
                             <div><label>Phone:</label></div>
-                            <div><input type="tel" name="SubmitterPhone" value="" class="bd-666766d93aefb-poc" id="bd-666766d93aefb-SubmitterPhone" placeholder="Phone Number" aria-label="On Behalf of Phone" data-submitter="1" /></div>
+                            <div><input type="tel" name="SubmitterPhone" value="" class="bd-6667685bf2651-poc" id="bd-6667685bf2651-SubmitterPhone" placeholder="Phone Number" aria-label="On Behalf of Phone" data-submitter="1" /></div>
                         </td>
                     </tr>
                     <tr>
                         <td>
                             <div><label>E-mail:</label></div>
-                            <div><input type="email" name="RequesterEmail" value="" class="bd-666766d93aefb-poc" id="bd-666766d93aefb-RequesterEmail" placeholder="Email" aria-label="Reporting Individual Email" required /></div>
+                            <div><input type="email" name="RequesterEmail" value="" class="bd-6667685bf2651-poc" id="bd-6667685bf2651-RequesterEmail" placeholder="Email" aria-label="Reporting Individual Email" required /></div>
                         </td>
                         <td>
                             <div><label>E-mail:</label></div>
-                            <div><input type="email" name="SubmitterEmail" value="" class="bd-666766d93aefb-poc" id="bd-666766d93aefb-SubmitterEmail" placeholder="Email" aria-label="On Behalf of Email" data-submitter="1" /></div>
+                            <div><input type="email" name="SubmitterEmail" value="" class="bd-6667685bf2651-poc" id="bd-6667685bf2651-SubmitterEmail" placeholder="Email" aria-label="On Behalf of Email" data-submitter="1" /></div>
                         </td>
                     </tr>
                 </table>
 
                 <h4>COMPLAINT/INCIDENT DETAILS</h4>
-                <div class="bd-666766d93aefb-control">
-                    <label class="bd-666766d93aefb-control-label-inline">Date of Incident:</label>
-                    <input type="date" name="IncidentDate" id="bd-666766d93aefb-IncidentDate" size="16" required />
+                <div class="bd-6667685bf2651-control">
+                    <label class="bd-6667685bf2651-control-label-inline">Date of Incident:</label>
+                    <input type="date" name="IncidentDate" id="bd-6667685bf2651-IncidentDate" size="16" required />
                 </div>
-                <div class="bd-666766d93aefb-control">
-                    <label for="bd-666766d93aefb-ActualAddress" class="bd-666766d93aefb-control-label-inline">Address:</label>
-                    <input type="text" name="ActualAddress" value="" id="bd-666766d93aefb-ActualAddress" required />
+                <div class="bd-6667685bf2651-control">
+                    <label for="bd-6667685bf2651-ActualAddress" class="bd-6667685bf2651-control-label-inline">Address:</label>
+                    <input type="text" name="ActualAddress" value="" id="bd-6667685bf2651-ActualAddress" required />
                 </div>
-                <div class="bd-666766d93aefb-control">
+                <div class="bd-6667685bf2651-control">
                     <div>
-                        <label class="bd-666766d93aefb-control-label-inline">City/State/Zip:</label>
+                        <label class="bd-6667685bf2651-control-label-inline">City/State/Zip:</label>
                         <span>
-                            <input type="text" name="LocationCity" value="" id="bd-666766d93aefb-LocationCity" aria-label="City" required />
+                            <input type="text" name="LocationCity" value="" id="bd-6667685bf2651-LocationCity" aria-label="City" required />
                         </span>
                         <span>
-                            <select name="LocationState" id="bd-666766d93aefb-LocationState" aria-label="State" required>
+                            <select name="LocationState" id="bd-6667685bf2651-LocationState" aria-label="State" required>
                                 <option value="AL">AL</option><option value="AK">AK</option><option value="AS">AS</option><option value="AZ">AZ</option><option value="AR">AR</option><option value="CA">CA</option><option value="CO">CO</option><option value="CT">CT</option><option value="DE">DE</option><option value="DC">DC</option><option value="FM">FM</option><option value="FL">FL</option><option value="GA">GA</option><option value="GU">GU</option><option value="HI">HI</option><option value="ID">ID</option><option value="IL">IL</option><option value="IN">IN</option><option value="IA">IA</option><option value="KS">KS</option><option value="KY">KY</option><option value="LA">LA</option><option value="ME">ME</option><option value="MH">MH</option><option value="MD">MD</option><option value="MA">MA</option><option value="MI">MI</option><option value="MN">MN</option><option value="MS">MS</option><option value="MO">MO</option><option value="MT">MT</option><option value="NE">NE</option><option value="NV">NV</option><option value="NH">NH</option><option value="NJ">NJ</option><option value="NM">NM</option><option value="NY">NY</option><option value="NC">NC</option><option value="ND">ND</option><option value="MP">MP</option><option value="OH">OH</option><option value="OK">OK</option><option value="OR">OR</option><option value="PW">PW</option><option value="PA">PA</option><option value="PR">PR</option><option value="RI">RI</option><option value="SC">SC</option><option value="SD">SD</option><option value="TN">TN</option><option value="TX">TX</option><option value="UT">UT</option><option value="VT">VT</option><option value="VI">VI</option><option value="VA">VA</option><option value="WA">WA</option><option value="WV">WV</option><option value="WI">WI</option><option value="WY">WY</option>                            </select>
                         </span>
                         <span>
-                            <input type="text" name="LocationZip" pattern="^[0-9]{5}(?:-[0-9]{4})?$" value="" id="bd-666766d93aefb-LocationZip" aria-label="ZIP Code" required />
+                            <input type="text" name="LocationZip" pattern="^[0-9]{5}(?:-[0-9]{4})?$" value="" id="bd-6667685bf2651-LocationZip" aria-label="ZIP Code" required />
                         </span>
                     </div>
                 </div>
-                <div class="bd-666766d93aefb-control">
-                    <div><label for="bd-666766d93aefb-Description" class="bd-666766d93aefb-control-label">Describe the complaint/incident:</label></div>
-                    <div><textarea name="cf_1236" cols="40" rows="3" id="bd-666766d93aefb-Description" required></textarea><div>
+                <div class="bd-6667685bf2651-control">
+                    <div><label for="bd-6667685bf2651-Description" class="bd-6667685bf2651-control-label">Describe the complaint/incident:</label></div>
+                    <div><textarea name="cf_1236" cols="40" rows="3" id="bd-6667685bf2651-Description" required></textarea><div>
                 </div>
-                <div class="bd-666766d93aefb-control">
-                    <div><label for="bd-666766d93aefb-PriorResolution" class="bd-666766d93aefb-control-label">Have efforts been made to resolve this complaint through the Department in which the alleged discrimination took place? If yes, please describe the efforts that have been made:</label></div>
+                <div class="bd-6667685bf2651-control">
+                    <div><label for="bd-6667685bf2651-PriorResolution" class="bd-6667685bf2651-control-label">Have efforts been made to resolve this complaint through the Department in which the alleged discrimination took place? If yes, please describe the efforts that have been made:</label></div>
                     <div>
-                        <textarea name="cf_1237" cols="40" rows="4" id="bd-666766d93aefb-PriorResolution" required></textarea>
+                        <textarea name="cf_1237" cols="40" rows="4" id="bd-6667685bf2651-PriorResolution" required></textarea>
                     </div>
                 </div>
-                <div class="bd-666766d93aefb-control">
-                    <div><label for="bd-666766d93aefb-RemedySought" class="bd-666766d93aefb-control-label">Remedy Sought:</label></div>
+                <div class="bd-6667685bf2651-control">
+                    <div><label for="bd-6667685bf2651-RemedySought" class="bd-6667685bf2651-control-label">Remedy Sought:</label></div>
                     <div>
-                        <textarea name="cf_1238" cols="40" rows="3" id="bd-666766d93aefb-RemedySought" required></textarea>
+                        <textarea name="cf_1238" cols="40" rows="3" id="bd-6667685bf2651-RemedySought" required></textarea>
                     </div>
                 </div>
             </div>
-            <div id="bd-666766d93aefb-grievanceFormSubmitContainer">
-                <button id="bd-666766d93aefb-grievanceFormSubmitBtn">Submit</button>
+            <div id="bd-6667685bf2651-grievanceFormSubmitContainer">
+                <button id="bd-6667685bf2651-grievanceFormSubmitBtn">Submit</button>
             </div>
         </form>
     `;
     document.getElementById("bd-grievance").innerHTML = grievanceTemplate;
 
-    document.getElementById("bd-666766d93aefb-grievanceFormSubmitBtn").addEventListener("click", submitGrievanceForm);
-    const pocFields = document.querySelectorAll('.bd-666766d93aefb-poc');
+    document.getElementById("bd-6667685bf2651-grievanceFormSubmitBtn").addEventListener("click", submitGrievanceForm);
+    const pocFields = document.querySelectorAll('.bd-6667685bf2651-poc');
     for (let i = 0; i < pocFields.length; i++) {
         pocFields[i].addEventListener('change', requesterPhoneEmailValidation);
     }
@@ -215,11 +215,11 @@ function submitGrievanceForm(e) {
 
     submitterDifferentCheck();
 
-    let form = document.getElementById("bd-666766d93aefb-grievanceForm");
+    let form = document.getElementById("bd-6667685bf2651-grievanceForm");
     form.classList.add('validated');
 
     if (form.checkValidity()) {
-        const formFields = document.getElementById("bd-666766d93aefb-grievanceForm").elements;
+        const formFields = document.getElementById("bd-6667685bf2651-grievanceForm").elements;
         let postObj = {};
         let grievanceTypes = [];
         for (let i = 0; i < formFields.length; i++) {
@@ -308,13 +308,13 @@ function requesterPhoneEmailValidation(e) {
 }
 
 function submitterDifferentCheck() {
-    let submitterFields = document.getElementById("bd-666766d93aefb-submitterDetails");
-    let submitterFirstNameField = document.getElementById("bd-666766d93aefb-SubmitterFirstName");
-    let submitterLastNameField = document.getElementById("bd-666766d93aefb-SubmitterLastName");
-    let submitterEmail = document.getElementById("bd-666766d93aefb-SubmitterEmail");
-    let submitterPhone = document.getElementById("bd-666766d93aefb-SubmitterPhone");
+    let submitterFields = document.getElementById("bd-6667685bf2651-submitterDetails");
+    let submitterFirstNameField = document.getElementById("bd-6667685bf2651-SubmitterFirstName");
+    let submitterLastNameField = document.getElementById("bd-6667685bf2651-SubmitterLastName");
+    let submitterEmail = document.getElementById("bd-6667685bf2651-SubmitterEmail");
+    let submitterPhone = document.getElementById("bd-6667685bf2651-SubmitterPhone");
 
-    if (submitterFirstNameField) {
+    if (submitterFirstNameField && submitterFirstNameField.value) {
         if (submitterFirstNameField !== null) submitterFirstNameField.required = true;
         if (submitterLastNameField !== null) submitterLastNameField.required = true;
         if (submitterEmail !== null) {
