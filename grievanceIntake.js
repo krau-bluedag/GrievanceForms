@@ -223,11 +223,14 @@ function submitGrievanceForm(e) {
     if (grievanceTypeValidation() && form.checkValidity()) {
         const formFields = document.getElementById("bd-666b4a9da487b-grievanceForm").elements;
         let postObj = {};
+        let customFields = {};
         let grievanceTypes = [];
         for (let i = 0; i < formFields.length; i++) {
             const item = formFields.item(i);
             if (item.name) {
-                if (item.type === 'radio') {
+                if (item.name.startsWith('cf_')) {
+    				customFields[item.name.substring(3)] = item.value;
+    			} else if (item.type === 'radio') {
                     if (item.checked) {
                         postObj[item.name] = item.value;
                     }
@@ -259,6 +262,7 @@ function submitGrievanceForm(e) {
         postObj.RequestTypeID = '3';
         postObj.ADAGrievance = '-1';
         postObj.SubmitterDifferent = submitterDifferent;
+        postObj.ExtraData = { Custom: customFields};
         if (0) {
             postObj.CompanyID = '0';
         }
