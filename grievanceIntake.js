@@ -215,7 +215,7 @@ initGrievanceForm();
 function submitGrievanceForm(e) {
     e.preventDefault();
 
-    submitterDifferentCheck();
+    let submitterDifferent = submitterDifferentCheck();
 
     let form = document.getElementById("bd-666b4a9da487b-grievanceForm");
     form.classList.add('validated');
@@ -258,7 +258,7 @@ function submitGrievanceForm(e) {
         //Add Additional required fields
         postObj.RequestTypeID = '3';
         postObj.ADAGrievance = '-1';
-        //postObj.LocationAddress = '';
+        postObj.SubmitterDifferent = submitterDifferent;
         if (0) {
             postObj.CompanyID = '0';
         }
@@ -309,6 +309,7 @@ function requesterPhoneEmailValidation(e) {
 }
 
 function submitterDifferentCheck() {
+    let isSubmitterDifferent = "no";
     let submitterFields = document.getElementById("bd-666b4a9da487b-submitterDetails");
     let submitterFirstNameField = document.getElementById("bd-666b4a9da487b-SubmitterFirstName");
     let submitterLastNameField = document.getElementById("bd-666b4a9da487b-SubmitterLastName");
@@ -328,12 +329,15 @@ function submitterDifferentCheck() {
             submitterEmail.required = true;
             submitterPhone.required = true;
         }
+        isSubmitterDifferent = "yes"
     } else {
         if (submitterFirstNameField !== null) submitterFirstNameField.required = false;
         if (submitterLastNameField !== null) submitterLastNameField.required = false;
         if (submitterEmail !== null) submitterEmail.required = false;
         if (submitterPhone !== null) submitterPhone.required = false;
     }
+
+    return isSubmitterDifferent;
 }
 
 function grievanceTypeValidation() {
