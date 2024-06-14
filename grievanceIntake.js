@@ -269,6 +269,29 @@ function submitGrievanceForm(e) {
             postObj.CompanyID = '0';
         }
 
+        // If both "Reporting Individual" and "On Behalf Of" are filled out,
+        // set the Requester field to the "On Behalf Of" data and the Submitter field to the "Reporting Individual" data.
+        if (submitterDifferent == "yes") {
+            ({
+                RequesterFirstName: postObj.SubmitterFirstName,
+                RequesterLastName: postObj.SubmitterLastName,
+                RequesterAddress: postObj.SubmitterAddress,
+                RequesterCity: postObj.SubmitterCity,
+                RequesterState: postObj.SubmitterState,
+                RequesterZip: postObj.SubmitterZip,
+                RequesterPhone: postObj.SubmitterPhone,
+                RequesterEmail: postObj.SubmitterEmail,
+                SubmitterFirstName: postObj.RequesterFirstName,
+                SubmitterLastName: postObj.RequesterLastName,
+                SubmitterAddress: postObj.RequesterAddress,
+                SubmitterCity: postObj.RequesterCity,
+                SubmitterState: postObj.RequesterState,
+                SubmitterZip: postObj.RequesterZip,
+                SubmitterPhone: postObj.RequesterPhone,
+                SubmitterEmail: postObj.RequesterEmail
+            } = postObj);
+        }
+
         //POST to BlueDAG API
         var xhr = new XMLHttpRequest();
         xhr.responseType = "json";
