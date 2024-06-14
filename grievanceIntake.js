@@ -254,13 +254,15 @@ function submitGrievanceForm(e) {
             if (postObj.GrievanceTypeOther) {
                 grievanceTypesString += `: ${postObj.GrievanceTypeOther}`;
             }
-            postObj.cf_987 = grievanceTypesString;
+            customFields['987'] = grievanceTypesString;
+            //postObj.cf_987 = grievanceTypesString;
         }
         delete postObj.GrievanceTypeOther;
 
         //Add Additional required fields
         postObj.RequestTypeID = '3';
         postObj.ADAGrievance = '-1';
+        postObj.LocationAddress = 'Test';
         postObj.SubmitterDifferent = submitterDifferent;
         postObj.ExtraData = { Custom: customFields};
         if (0) {
