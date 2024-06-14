@@ -272,24 +272,32 @@ function submitGrievanceForm(e) {
         // If both "Reporting Individual" and "On Behalf Of" are filled out,
         // set the Requester field to the "On Behalf Of" data and the Submitter field to the "Reporting Individual" data.
         if (submitterDifferent == "yes") {
-            ({
-                RequesterFirstName: postObj.SubmitterFirstName,
-                RequesterLastName: postObj.SubmitterLastName,
-                RequesterAddress: postObj.SubmitterAddress,
-                RequesterCity: postObj.SubmitterCity,
-                RequesterState: postObj.SubmitterState,
-                RequesterZip: postObj.SubmitterZip,
-                RequesterPhone: postObj.SubmitterPhone,
-                RequesterEmail: postObj.SubmitterEmail,
-                SubmitterFirstName: postObj.RequesterFirstName,
-                SubmitterLastName: postObj.RequesterLastName,
-                SubmitterAddress: postObj.RequesterAddress,
-                SubmitterCity: postObj.RequesterCity,
-                SubmitterState: postObj.RequesterState,
-                SubmitterZip: postObj.RequesterZip,
-                SubmitterPhone: postObj.RequesterPhone,
-                SubmitterEmail: postObj.RequesterEmail
-            } = postObj);
+            let tempFirstName = postObj.RequesterFirstName;
+            let tempLastName = postObj.RequesterLastName;
+            let tempAddress = postObj.RequesterAddress;
+            let tempCity = postObj.RequesterCity;
+            let tempState = postObj.RequesterState;
+            let tempZip = postObj.RequesterZip;
+            let tempPhone = postObj.RequesterPhone;
+            let tempEmail = postObj.RequesterEmail;
+
+            postObj.RequesterFirstName = postObj.SubmitterFirstName;
+            postObj.RequesterLastName = postObj.SubmitterLastName;
+            postObj.RequesterAddress = postObj.SubmitterAddress;
+            postObj.RequesterCity = postObj.SubmitterCity;
+            postObj.RequesterState = postObj.SubmitterState;
+            postObj.RequesterZip = postObj.SubmitterZip;
+            postObj.RequesterPhone = postObj.SubmitterPhone;
+            postObj.RequesterEmail = postObj.SubmitterEmail;
+
+            postObj.SubmitterFirstName = tempFirstName;
+            postObj.SubmitterLastName = tempLastName;
+            postObj.SubmitterAddress = tempAddress;
+            postObj.SubmitterCity = tempCity;
+            postObj.SubmitterState = tempState;
+            postObj.SubmitterZip = tempZip;
+            postObj.SubmitterPhone = tempPhone;
+            postObj.SubmitterEmail = tempEmail;
         }
 
         //POST to BlueDAG API
