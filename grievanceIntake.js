@@ -265,8 +265,8 @@ function submitGrievanceForm(e) {
         postObj.LocationAddress = 'Test';
         postObj.SubmitterDifferent = submitterDifferent;
         postObj.ExtraData = { Custom: customFields};
-        if (0) {
-            postObj.CompanyID = '0';
+        if (77) {
+            postObj.CompanyID = '77';
         }
 
         // If both "Reporting Individual" and "On Behalf Of" are filled out,
