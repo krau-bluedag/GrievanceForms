@@ -1,0 +1,87 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+form {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 5px;
+}
+
+h1 {
+    color: #2c5777;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="black" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
+    background-repeat: no-repeat;
+    background-position-x: 98%;
+    background-position-y: 50%;
+}
+
+textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+.radio-group {
+    margin-bottom: 15px;
+}
+
+.radio-group label {
+    display: inline;
+    margin-right: 10px;
+}
+
+.required:after {
+    content: " *";
+    color: red;
+}
+
+.section-title {
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: #2c5777;
+}
+
+/* Additional styles for the accessibility icon */
+.accessibility-icon {
+    display: inline-block;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.accessibility-icon svg {
+    width: 24px;
+    height: 24px;
+    fill: #2c5777;
+}
