@@ -56,9 +56,9 @@ function initGrievanceForm() {
             #bd-667472043601d-grievanceForm textarea {
                 width: 100%;
             }
-            #bd-667472043601d-grievanceForm select{
+            /*#bd-667472043601d-grievanceForm select{
                 height: 21px;
-            }
+            }*/
         </style>
         <form id="bd-667472043601d-grievanceForm" accept-charset="utf-8">
             <div id="bd-667472043601d-grievance-type-container">
@@ -74,7 +74,7 @@ function initGrievanceForm() {
                         <label><input type="checkbox" name="GrievanceType[]" value="Facility Accessibility" /> Facility Accessibility</label>
                     </div>
                     <div>
-                        <label><input type="checkbox" name="GrievanceType[]" value="Other" /> Other:</label>
+                        <label style="display: inline;"><input type="checkbox" name="GrievanceType[]" value="Other" /> Other:</label>
                         <input type="text" name="GrievanceTypeOther" value="" />
                     </div>
                 </div>
