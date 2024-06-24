@@ -86,3 +86,58 @@ textarea {
     height: 24px;
     fill: #2c5777;
 }
+
+/* Use attribute selector for the form */
+form[id^="bd-"][id$="-grievanceForm"] {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Adjust input and select widths */
+form[id^="bd-"][id$="-grievanceForm"] input[type="text"],
+form[id^="bd-"][id$="-grievanceForm"] input[type="email"],
+form[id^="bd-"][id$="-grievanceForm"] input[type="tel"],
+form[id^="bd-"][id$="-grievanceForm"] input[type="date"],
+form[id^="bd-"][id$="-grievanceForm"] select,
+form[id^="bd-"][id$="-grievanceForm"] textarea {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Style for City, State, Zip container */
+form[id^="bd-"][id$="-grievanceForm"] .bd-667472043601d-control-label-inline + span {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+}
+
+/* Adjust widths for City, State, Zip inputs */
+form[id^="bd-"][id$="-grievanceForm"] .bd-667472043601d-control-label-inline + span input[type="text"],
+form[id^="bd-"][id$="-grievanceForm"] .bd-667472043601d-control-label-inline + span select {
+    width: auto;
+    flex: 1;
+}
+
+form[id^="bd-"][id$="-grievanceForm"] .bd-667472043601d-control-label-inline + span select {
+    min-width: 70px;
+}
+
+/* Make sure the table cells don't shrink */
+form[id^="bd-"][id$="-grievanceForm"] .bd-667472043601d-table td {
+    width: 50%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    form[id^="bd-"][id$="-grievanceForm"] .bd-667472043601d-control-label-inline + span {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    form[id^="bd-"][id$="-grievanceForm"] .bd-667472043601d-control-label-inline + span input[type="text"],
+    form[id^="bd-"][id$="-grievanceForm"] .bd-667472043601d-control-label-inline + span select {
+        width: 100%;
+    }
+}
