@@ -1,33 +1,35 @@
-/* Form container */
-form[id^="bd-"][id$="-grievanceForm"] {
-    max-width: 800px;
-    margin: 0 auto;
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+form {
+    max-width: 600px;
+    margin: 20px auto;
     padding: 20px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 5px;
 }
 
-/* General form controls */
-form[id^="bd-"][id$="-grievanceForm"] .control {
-    margin-top: 10px;
+h1 {
+    color: #2c5777;
+    font-size: 24px;
+    margin-bottom: 20px;
 }
 
-/* Labels */
-form[id^="bd-"][id$="-grievanceForm"] .control-label,
-form[id^="bd-"][id$="-grievanceForm"] .control-label-inline {
-    font-weight: bold;
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
 }
 
-form[id^="bd-"][id$="-grievanceForm"] .control-label-inline {
-    width: 140px;
-    float: left;
-}
-
-/* Form inputs */
-form[id^="bd-"][id$="-grievanceForm"] input[type="text"],
-form[id^="bd-"][id$="-grievanceForm"] input[type="email"],
-form[id^="bd-"][id$="-grievanceForm"] input[type="tel"],
-form[id^="bd-"][id$="-grievanceForm"] input[type="date"],
-form[id^="bd-"][id$="-grievanceForm"] select,
-form[id^="bd-"][id$="-grievanceForm"] textarea {
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+select,
+textarea {
     width: 100%;
     padding: 8px;
     margin-bottom: 15px;
@@ -36,101 +38,80 @@ form[id^="bd-"][id$="-grievanceForm"] textarea {
     box-sizing: border-box;
 }
 
-/* Validation styles */
-form[id^="bd-"][id$="-grievanceForm"].validated input:invalid,
-form[id^="bd-"][id$="-grievanceForm"].validated select:invalid,
-form[id^="bd-"][id$="-grievanceForm"].validated textarea:invalid,
-form[id^="bd-"][id$="-grievanceForm"] .invalidField {
-    border: 1px solid red;
+select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="black" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
+    background-repeat: no-repeat;
+    background-position-x: 98%;
+    background-position-y: 50%;
 }
 
-/* Required field label */
-form[id^="bd-"][id$="-grievanceForm"] .required-label {
+textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+.radio-group {
+    margin-bottom: 15px;
+}
+
+.radio-group label {
+    display: inline;
+    margin-right: 10px;
+}
+
+.required:after {
+    content: " *";
     color: red;
 }
 
-/* Table styles */
-form[id^="bd-"][id$="-grievanceForm"] .table {
-    border-collapse: collapse;
-    width: 100%;
+.section-title {
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: #2c5777;
 }
 
-form[id^="bd-"][id$="-grievanceForm"] .table th,
-form[id^="bd-"][id$="-grievanceForm"] .table td {
-    padding: 8px;
-    text-align: left;
+/* Additional styles for the accessibility icon */
+.accessibility-icon {
+    display: inline-block;
+    margin-right: 10px;
+    vertical-align: middle;
 }
 
-form[id^="bd-"][id$="-grievanceForm"] .table td {
-    border: 1px solid black;
-    width: 50%;
+.accessibility-icon svg {
+    width: 24px;
+    height: 24px;
+    fill: #2c5777;
 }
 
-/* Headings */
-form[id^="bd-"][id$="-grievanceForm"] h4 {
-    text-align: center;
+/* Styling the calendar icon */
+input[type="date"]::-webkit-calendar-picker-indicator {
+    color: #2c5777;
+    font-size: 16px;
+    padding: 5px;
 }
 
-/* Grievance type container */
-form[id^="bd-"][id$="-grievanceForm"] #grievance-type-container {
-    border: 1px solid black;
-    padding: 8px;
+/* For Firefox */
+input[type="date"]::-moz-calendar-picker-indicator {
+    color: #2c5777;
+    font-size: 16px;
+    padding: 5px;
 }
 
-form[id^="bd-"][id$="-grievanceForm"] #grievance-type-options {
-    margin-left: 10px;
-    padding-top: 5px;
-    padding-bottom: 5px;
+/* Placeholder text color */
+input[type="date"]::-webkit-datetime-edit-text,
+input[type="date"]::-webkit-datetime-edit-month-field,
+input[type="date"]::-webkit-datetime-edit-day-field,
+input[type="date"]::-webkit-datetime-edit-year-field {
+    color: #999;
 }
 
-/* Submit button container */
-form[id^="bd-"][id$="-grievanceForm"] #grievanceFormSubmitContainer {
-    margin-top: 10px;
-    text-align: center;
-}
-
-form[id^="bd-"][id$="-grievanceForm"] #grievanceFormSubmitBtn {
-    padding: 8px;
-}
-
-/* Textarea */
-form[id^="bd-"][id$="-grievanceForm"] textarea {
-    width: 100%;
-}
-
-/* Select element */
-form[id^="bd-"][id$="-grievanceForm"] select {
-    height: 37px;
-}
-
-/* City, State, Zip container */
-form[id^="bd-"][id$="-grievanceForm"] .control-label-inline + span {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    align-items: center;
-}
-
-/* Adjust widths for City, State, Zip inputs */
-form[id^="bd-"][id$="-grievanceForm"] .control-label-inline + span input[type="text"],
-form[id^="bd-"][id$="-grievanceForm"] .control-label-inline + span select {
-    width: auto;
-    flex: 1;
-}
-
-form[id^="bd-"][id$="-grievanceForm"] .control-label-inline + span select {
-    min-width: 70px;
-}
-
-/* Responsive adjustments */
-@media (max-width: 600px) {
-    form[id^="bd-"][id$="-grievanceForm"] .control-label-inline + span {
-        flex-direction: column;
-        align-items: stretch;
-    }
-    
-    form[id^="bd-"][id$="-grievanceForm"] .control-label-inline + span input[type="text"],
-    form[id^="bd-"][id$="-grievanceForm"] .control-label-inline + span select {
-        width: 100%;
-    }
+input[type="date"]:focus::-webkit-datetime-edit-text,
+input[type="date"]:focus::-webkit-datetime-edit-month-field,
+input[type="date"]:focus::-webkit-datetime-edit-day-field,
+input[type="date"]:focus::-webkit-datetime-edit-year-field {
+    color: #333;
 }
