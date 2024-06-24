@@ -3,15 +3,6 @@ body {
     background-color: #f0f0f0;
 }
 
-form {
-    max-width: 600px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: white;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    border-radius: 5px;
-}
-
 h1 {
     color: #2c5777;
     font-size: 24px;
@@ -89,7 +80,7 @@ textarea {
 
 /* Use attribute selector for the form */
 form[id^="bd-"][id$="-grievanceForm"] {
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
     padding: 20px;
 }
