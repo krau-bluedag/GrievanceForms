@@ -259,7 +259,7 @@ function submitGrievanceForm(e) {
         delete postObj.GrievanceTypeOther;
 
         //Add Additional required fields
-        postObj.RequestTypeID = '3';
+        postObj.RequestTypeID = '11';
         postObj.ADAGrievance = '-1';
         postObj.LocationAddress = 'General Location';
         postObj.SubmitterDifferent = submitterDifferent;
