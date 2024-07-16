@@ -235,7 +235,7 @@ function submitGrievanceForm(e) {
         xhr.setRequestHeader("Content-Type", "application/json");
         xhr.send(JSON.stringify(postObj));
 
-        document.getElementById("bd-grievance").innerHTML = "Submitting your grievance...";
+        document.getElementById("bd-6696a64475e72-feedback").innerHTML = "Submitting your grievance...";
     }
 }
 
