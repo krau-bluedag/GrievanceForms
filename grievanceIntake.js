@@ -23,7 +23,7 @@ function initGrievanceForm() {
                 color: red;
             }
         </style>
-        <div id="bd-6696a64475e72-feedback" style="display:none;"></div>
+        <div id="bd-6696a64475e72-feedback"></div>
         <form id="bd-6696a64475e72-grievanceForm" accept-charset="utf-8">
             <div>
                 <h4>Requester Information</h4>
