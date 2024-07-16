@@ -23,6 +23,7 @@ function initGrievanceForm() {
                 color: red;
             }
         </style>
+        <div id="bd-6696a64475e72-feedback" style="display:none;"></div>
         <form id="bd-6696a64475e72-grievanceForm" accept-charset="utf-8">
             <div>
                 <h4>Requester Information</h4>
@@ -220,13 +221,13 @@ function submitGrievanceForm(e) {
                 let failureContent = "An error occurred while submitting your grievance. Please try again later. <button onclick=\"window.location.reload()\">Retry</button>";
                 if (this.status == 200) {
                     if (this.response.success) {
-                        document.getElementById("bd-grievance").innerHTML = "Your grievance has been submitted.";
+                        document.getElementById("bd-6696a64475e72-feedback").innerHTML = "Your grievance has been submitted.";
                     } else {
                         console.log(this.response.message);
-                        document.getElementById("bd-grievance").innerHTML = failureContent;
+                        document.getElementById("bd-6696a64475e72-feedback").innerHTML = failureContent;
                     }
                 } else {
-                    document.getElementById("bd-grievance").innerHTML = failureContent;
+                    document.getElementById("bd-6696a64475e72-feedback").innerHTML = failureContent;
                 }
             }
         };
