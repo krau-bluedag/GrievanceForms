@@ -2,68 +2,68 @@ function initGrievanceForm() {
     //build Grievance form
     let grievanceTemplate = `
         <style>
-            .bd-66d0a827d0897-control {
+            .bd-66d0ad38e5a9e-control {
                 margin-top: 10px;
             }
-            .bd-66d0a827d0897-control-label,
-            .bd-66d0a827d0897-control-label-inline {
+            .bd-66d0ad38e5a9e-control-label,
+            .bd-66d0ad38e5a9e-control-label-inline {
                 font-weight: bold;
             }
-            .bd-66d0a827d0897-control-label-inline {
+            .bd-66d0ad38e5a9e-control-label-inline {
                 width: 140px;
                 float: left;
             }
-            #bd-66d0a827d0897-grievanceForm.validated input:invalid,
-            #bd-66d0a827d0897-grievanceForm.validated select:invalid,
-            #bd-66d0a827d0897-grievanceForm.validated textarea:invalid,
-            .bd-66d0a827d0897-invalidField {
+            #bd-66d0ad38e5a9e-grievanceForm.validated input:invalid,
+            #bd-66d0ad38e5a9e-grievanceForm.validated select:invalid,
+            #bd-66d0ad38e5a9e-grievanceForm.validated textarea:invalid,
+            .bd-66d0ad38e5a9e-invalidField {
                 border: 1px solid red;
             }
-            .bd-66d0a827d0897-required-label {
+            .bd-66d0ad38e5a9e-required-label {
                 color: red;
             }
-            .bd-66d0a827d0897-table {
+            .bd-66d0ad38e5a9e-table {
                 border-collapse: collapse;
                 width: 100%;
             }
-            .bd-66d0a827d0897-table th,
-            .bd-66d0a827d0897-table td {
+            .bd-66d0ad38e5a9e-table th,
+            .bd-66d0ad38e5a9e-table td {
                 padding: 8px;
                 text-align: left;
             }
-            .bd-66d0a827d0897-table td {
+            .bd-66d0ad38e5a9e-table td {
                 border: 1px solid black;
             }
-            #bd-66d0a827d0897-grievanceForm h4 {
+            #bd-66d0ad38e5a9e-grievanceForm h4 {
                 text-align: center;
             }
-            #bd-66d0a827d0897-grievance-type-options {
+            #bd-66d0ad38e5a9e-grievance-type-options {
                 margin-left: 10px;
                 padding-top: 5px;
                 padding-bottom: 5px;
             }
-            #bd-66d0a827d0897-grievance-type-container {
+            #bd-66d0ad38e5a9e-grievance-type-container {
                 border: 1px solid black;
                 padding: 8px;
             }
-            #bd-66d0a827d0897-grievanceFormSubmitContainer {
+            #bd-66d0ad38e5a9e-grievanceFormSubmitContainer {
                 margin-top: 10px;
                 text-align: center;
             }
-            #bd-66d0a827d0897-grievanceFormSubmitBtn {
+            #bd-66d0ad38e5a9e-grievanceFormSubmitBtn {
                 padding: 8px;
             }
-            #bd-66d0a827d0897-grievanceForm textarea {
+            #bd-66d0ad38e5a9e-grievanceForm textarea {
                 width: 100%;
             }
-            #bd-66d0a827d0897-grievanceForm select{
+            #bd-66d0ad38e5a9e-grievanceForm select{
                 height: 21px;
             }
         </style>
-        <form id="bd-66d0a827d0897-grievanceForm" accept-charset="utf-8">
-            <div id="bd-66d0a827d0897-grievance-type-container">
-                <div class="bd-66d0a827d0897-control-label">Type of Grievance (select any that apply):</div>
-                <div id="bd-66d0a827d0897-grievance-type-options">
+        <form id="bd-66d0ad38e5a9e-grievanceForm" accept-charset="utf-8">
+            <div id="bd-66d0ad38e5a9e-grievance-type-container">
+                <div class="bd-66d0ad38e5a9e-control-label">Type of Grievance (select any that apply):</div>
+                <div id="bd-66d0ad38e5a9e-grievance-type-options">
                     <div>
                         <label><input type="checkbox" name="GrievanceType[]" value="Accommodation Request" /> Accommodation Request</label>
                     </div>
@@ -79,13 +79,13 @@ function initGrievanceForm() {
                     </div>
                 </div>
                 <div>
-                    <label for="bd-66d0a827d0897-cf_993" class="bd-66d0a827d0897-control-label">Department/Program:</label>
-                    <input type="text" name="cf_993" value="" id="bd-66d0a827d0897-cf_993" required />
+                    <label for="bd-66d0ad38e5a9e-cf_993" class="bd-66d0ad38e5a9e-control-label">Department/Program:</label>
+                    <input type="text" name="cf_993" value="" id="bd-66d0ad38e5a9e-cf_993" required />
                 </div>
             </div>
             <div>
                 <h4>CONTACT INFORMATION</h4>
-                <table class="bd-66d0a827d0897-table">
+                <table class="bd-66d0ad38e5a9e-table">
                     <tr>
                         <th>Reporting Individual</th>
                         <th>On Behalf of:<br><sub>(if different than Reporting Individual)</sub></th>
@@ -94,34 +94,34 @@ function initGrievanceForm() {
                         <td>
                             <div><label>Full Name:</label></div>
                             <div>
-                                <input type="text" name="RequesterFirstName" value="" id="bd-66d0a827d0897-RequesterFirstName" placeholder="First Name" aria-label="Reporting Individual First Name" required />
-                                <input type="text" name="RequesterLastName" value="" id="bd-66d0a827d0897-RequesterLastName" placeholder="Last Name" aria-label="Reporting Individual Last Name" required />
+                                <input type="text" name="RequesterFirstName" value="" id="bd-66d0ad38e5a9e-RequesterFirstName" placeholder="First Name" aria-label="Reporting Individual First Name" required />
+                                <input type="text" name="RequesterLastName" value="" id="bd-66d0ad38e5a9e-RequesterLastName" placeholder="Last Name" aria-label="Reporting Individual Last Name" required />
                             </div>
                         </td>
                         <td>
                             <div><label>Full Name:</label></div>
                             <div>
-                                <input type="text" name="SubmitterFirstName" value="" id="bd-66d0a827d0897-SubmitterFirstName" placeholder="First Name" aria-label="On Behalf of First Name" />
-                                <input type="text" name="SubmitterLastName" value="" id="bd-66d0a827d0897-SubmitterLastName" placeholder="Last Name" aria-label="On Behalf of Last Name" />
+                                <input type="text" name="SubmitterFirstName" value="" id="bd-66d0ad38e5a9e-SubmitterFirstName" placeholder="First Name" aria-label="On Behalf of First Name" />
+                                <input type="text" name="SubmitterLastName" value="" id="bd-66d0ad38e5a9e-SubmitterLastName" placeholder="Last Name" aria-label="On Behalf of Last Name" />
                             </div>
                         </td>
                     </tr>
                     <tr>
                         <td>
                             <div><label>Address:</label></div>
-                            <div><input type="text" name="RequesterAddress" value="" id="bd-66d0a827d0897-RequesterAddress" placeholder="Address" aria-label="Reporting Individual Address" required /></div>
+                            <div><input type="text" name="RequesterAddress" value="" id="bd-66d0ad38e5a9e-RequesterAddress" placeholder="Address" aria-label="Reporting Individual Address" required /></div>
                         </td>
                         <td>
                             <div><label>Address:</label></div>
-                            <div><input type="text" name="SubmitterAddress" value="" id="bd-66d0a827d0897-SubmitterAddress" placeholder="Address" aria-label="On Behalf of Address" /></div>
+                            <div><input type="text" name="SubmitterAddress" value="" id="bd-66d0ad38e5a9e-SubmitterAddress" placeholder="Address" aria-label="On Behalf of Address" /></div>
                         </td>
                     </tr>
                     <tr>
                         <td>
                             <div><label>City, State, and Zip Code:</label></div>
                             <div>
-                                <input type="text" name="RequesterCity" value="" id="bd-66d0a827d0897-RequesterCity" placeholder="City" aria-label="Reporting Individual City" required />
-                                <select name="RequesterState" id="bd-66d0a827d0897-RequesterState" aria-label="Reporting Individual State" required>
+                                <input type="text" name="RequesterCity" value="" id="bd-66d0ad38e5a9e-RequesterCity" placeholder="City" aria-label="Reporting Individual City" required />
+                                <select name="RequesterState" id="bd-66d0ad38e5a9e-RequesterState" aria-label="Reporting Individual State" required>
                                                                     <option value="AL">AL</option>
                                                                     <option value="AK">AK</option>
                                                                     <option value="AS">AS</option>
@@ -182,14 +182,14 @@ function initGrievanceForm() {
                                                                     <option value="WI">WI</option>
                                                                     <option value="WY">WY</option>
                                                                 </select>
-                                <input type="text" name="RequesterZip" value="" id="bd-66d0a827d0897-RequesterZip" placeholder="Zip Code" aria-label="Reporting Individual Zip Code" required />
+                                <input type="text" name="RequesterZip" value="" id="bd-66d0ad38e5a9e-RequesterZip" placeholder="Zip Code" aria-label="Reporting Individual Zip Code" required />
                             </div>
                         </td>
                         <td>
                             <div><label>City, State, and Zip Code:</label></div>
                             <div>
-                                <input type="text" name="SubmitterCity" value="" id="bd-66d0a827d0897-SubmitterCity" placeholder="City" aria-label="On Behalf of City" />
-                                <select name="SubmitterState" id="bd-66d0a827d0897-SubmitterState" aria-label="On Behalf of State">
+                                <input type="text" name="SubmitterCity" value="" id="bd-66d0ad38e5a9e-SubmitterCity" placeholder="City" aria-label="On Behalf of City" />
+                                <select name="SubmitterState" id="bd-66d0ad38e5a9e-SubmitterState" aria-label="On Behalf of State">
                                     <option value="">State</option>
                                                                         <option value="AL">AL</option>
                                                                         <option value="AK">AK</option>
@@ -251,83 +251,83 @@ function initGrievanceForm() {
                                                                         <option value="WI">WI</option>
                                                                         <option value="WY">WY</option>
                                                                     </select>
-                                <input type="text" name="SubmitterZip" value="" id="bd-66d0a827d0897-SubmitterZip" placeholder="Zip Code" aria-label="On Behalf of Zip Code" />
+                                <input type="text" name="SubmitterZip" value="" id="bd-66d0ad38e5a9e-SubmitterZip" placeholder="Zip Code" aria-label="On Behalf of Zip Code" />
                             </div>
                         </td>
                     </tr>
                     <tr>
                         <td>
                             <div><label>Phone:</label></div>
-                            <div><input type="tel" name="RequesterPhone" value="" class="bd-66d0a827d0897-poc" id="bd-66d0a827d0897-RequesterPhone" placeholder="Phone Number" aria-label="Reporting Individual Phone" required /></div>
+                            <div><input type="tel" name="RequesterPhone" value="" class="bd-66d0ad38e5a9e-poc" id="bd-66d0ad38e5a9e-RequesterPhone" placeholder="Phone Number" aria-label="Reporting Individual Phone" required /></div>
                         </td>
                         <td>
                             <div><label>Phone:</label></div>
-                            <div><input type="tel" name="SubmitterPhone" value="" class="bd-66d0a827d0897-poc" id="bd-66d0a827d0897-SubmitterPhone" placeholder="Phone Number" aria-label="On Behalf of Phone" data-submitter="1" /></div>
+                            <div><input type="tel" name="SubmitterPhone" value="" class="bd-66d0ad38e5a9e-poc" id="bd-66d0ad38e5a9e-SubmitterPhone" placeholder="Phone Number" aria-label="On Behalf of Phone" data-submitter="1" /></div>
                         </td>
                     </tr>
                     <tr>
                         <td>
                             <div><label>E-mail:</label></div>
-                            <div><input type="email" name="RequesterEmail" value="" class="bd-66d0a827d0897-poc" id="bd-66d0a827d0897-RequesterEmail" placeholder="Email" aria-label="Reporting Individual Email" required /></div>
+                            <div><input type="email" name="RequesterEmail" value="" class="bd-66d0ad38e5a9e-poc" id="bd-66d0ad38e5a9e-RequesterEmail" placeholder="Email" aria-label="Reporting Individual Email" required /></div>
                         </td>
                         <td>
                             <div><label>E-mail:</label></div>
-                            <div><input type="email" name="SubmitterEmail" value="" class="bd-66d0a827d0897-poc" id="bd-66d0a827d0897-SubmitterEmail" placeholder="Email" aria-label="On Behalf of Email" data-submitter="1" /></div>
+                            <div><input type="email" name="SubmitterEmail" value="" class="bd-66d0ad38e5a9e-poc" id="bd-66d0ad38e5a9e-SubmitterEmail" placeholder="Email" aria-label="On Behalf of Email" data-submitter="1" /></div>
                         </td>
                     </tr>
                 </table>
 
                 <h4>COMPLAINT/INCIDENT DETAILS</h4>
-                <div class="bd-66d0a827d0897-control">
-                    <label class="bd-66d0a827d0897-control-label-inline">Date of Incident:</label>
-                    <input type="date" name="IncidentDate" id="bd-66d0a827d0897-IncidentDate" size="16" required />
+                <div class="bd-66d0ad38e5a9e-control">
+                    <label class="bd-66d0ad38e5a9e-control-label-inline">Date of Incident:</label>
+                    <input type="date" name="IncidentDate" id="bd-66d0ad38e5a9e-IncidentDate" size="16" required />
                 </div>
-                <div class="bd-66d0a827d0897-control">
-                    <label for="bd-66d0a827d0897-ActualAddress" class="bd-66d0a827d0897-control-label-inline">Address:</label>
-                    <input type="text" name="ActualAddress" value="" id="bd-66d0a827d0897-ActualAddress" required />
+                <div class="bd-66d0ad38e5a9e-control">
+                    <label for="bd-66d0ad38e5a9e-ActualAddress" class="bd-66d0ad38e5a9e-control-label-inline">Address:</label>
+                    <input type="text" name="ActualAddress" value="" id="bd-66d0ad38e5a9e-ActualAddress" required />
                 </div>
-                <div class="bd-66d0a827d0897-control">
+                <div class="bd-66d0ad38e5a9e-control">
                     <div>
-                        <label class="bd-66d0a827d0897-control-label-inline">City/State/Zip:</label>
+                        <label class="bd-66d0ad38e5a9e-control-label-inline">City/State/Zip:</label>
                         <span>
-                            <input type="text" name="LocationCity" value="" id="bd-66d0a827d0897-LocationCity" aria-label="City" required />
+                            <input type="text" name="LocationCity" value="" id="bd-66d0ad38e5a9e-LocationCity" aria-label="City" required />
                         </span>
                         <span>
-                            <select name="LocationState" id="bd-66d0a827d0897-LocationState" aria-label="State" required>
+                            <select name="LocationState" id="bd-66d0ad38e5a9e-LocationState" aria-label="State" required>
                                 <option value="VA">VA</option>
                             </select>
                         </span>
                         <span>
-                            <input type="text" name="LocationZip" pattern="^[0-9]{5}(?:-[0-9]{4})?$" value="" id="bd-66d0a827d0897-LocationZip" aria-label="ZIP Code" required />
+                            <input type="text" name="LocationZip" pattern="^[0-9]{5}(?:-[0-9]{4})?$" value="" id="bd-66d0ad38e5a9e-LocationZip" aria-label="ZIP Code" required />
                         </span>
                     </div>
                 </div>
-                <div class="bd-66d0a827d0897-control">
-                    <div><label for="bd-66d0a827d0897-Description" class="bd-66d0a827d0897-control-label">Describe the complaint/incident:</label></div>
-                    <div><textarea name="cf_994" cols="40" rows="3" id="bd-66d0a827d0897-Description" required></textarea><div>
+                <div class="bd-66d0ad38e5a9e-control">
+                    <div><label for="bd-66d0ad38e5a9e-Description" class="bd-66d0ad38e5a9e-control-label">Describe the complaint/incident:</label></div>
+                    <div><textarea name="cf_994" cols="40" rows="3" id="bd-66d0ad38e5a9e-Description" required></textarea><div>
                 </div>
-                <div class="bd-66d0a827d0897-control">
-                    <div><label for="bd-66d0a827d0897-PriorResolution" class="bd-66d0a827d0897-control-label">Have efforts been made to resolve this complaint through the Department in which the alleged discrimination took place? If yes, please describe the efforts that have been made:</label></div>
+                <div class="bd-66d0ad38e5a9e-control">
+                    <div><label for="bd-66d0ad38e5a9e-PriorResolution" class="bd-66d0ad38e5a9e-control-label">Have efforts been made to resolve this complaint through the Department in which the alleged discrimination took place? If yes, please describe the efforts that have been made:</label></div>
                     <div>
-                        <textarea name="cf_995" cols="40" rows="4" id="bd-66d0a827d0897-PriorResolution" required></textarea>
+                        <textarea name="cf_995" cols="40" rows="4" id="bd-66d0ad38e5a9e-PriorResolution" required></textarea>
                     </div>
                 </div>
-                <div class="bd-66d0a827d0897-control">
-                    <div><label for="bd-66d0a827d0897-RemedySought" class="bd-66d0a827d0897-control-label">Remedy Sought:</label></div>
+                <div class="bd-66d0ad38e5a9e-control">
+                    <div><label for="bd-66d0ad38e5a9e-RemedySought" class="bd-66d0ad38e5a9e-control-label">Remedy Sought:</label></div>
                     <div>
-                        <textarea name="cf_996" cols="40" rows="3" id="bd-66d0a827d0897-RemedySought" required></textarea>
+                        <textarea name="cf_996" cols="40" rows="3" id="bd-66d0ad38e5a9e-RemedySought" required></textarea>
                     </div>
                 </div>
             </div>
-            <div id="bd-66d0a827d0897-grievanceFormSubmitContainer">
-                <button id="bd-66d0a827d0897-grievanceFormSubmitBtn">Submit</button>
+            <div id="bd-66d0ad38e5a9e-grievanceFormSubmitContainer">
+                <button id="bd-66d0ad38e5a9e-grievanceFormSubmitBtn">Submit</button>
             </div>
         </form>
     `;
     document.getElementById("bd-grievance").innerHTML = grievanceTemplate;
 
-    document.getElementById("bd-66d0a827d0897-grievanceFormSubmitBtn").addEventListener("click", submitGrievanceForm);
-    const pocFields = document.querySelectorAll('.bd-66d0a827d0897-poc');
+    document.getElementById("bd-66d0ad38e5a9e-grievanceFormSubmitBtn").addEventListener("click", submitGrievanceForm);
+    const pocFields = document.querySelectorAll('.bd-66d0ad38e5a9e-poc');
     for (let i = 0; i < pocFields.length; i++) {
         pocFields[i].addEventListener('change', requesterPhoneEmailValidation);
     }
@@ -339,11 +339,11 @@ function submitGrievanceForm(e) {
 
     let submitterDifferent = submitterDifferentCheck();
 
-    let form = document.getElementById("bd-66d0a827d0897-grievanceForm");
+    let form = document.getElementById("bd-66d0ad38e5a9e-grievanceForm");
     form.classList.add('validated');
 
     if (grievanceTypeValidation() && form.checkValidity()) {
-        const formFields = document.getElementById("bd-66d0a827d0897-grievanceForm").elements;
+        const formFields = document.getElementById("bd-66d0ad38e5a9e-grievanceForm").elements;
         let postObj = {};
         let customFields = {};
         let grievanceTypes = [];
@@ -429,132 +429,7 @@ function submitGrievanceForm(e) {
                 let failureContent = "An error occurred while submitting your grievance. Please try again later. <button onclick=\"window.location.reload()\">Retry</button>";
                 if (this.status == 200) {
                     if (this.response.success) {
-                        document.getElementById("bd-grievance").innerHTML = "            </pre>
-                <style>
-            .errorTable,
-            .debugTable {
-                font-family: monospace;
-                width: 100%;
-                line-height: 1.5em;
-            }
-
-            .errorTable {
-                color: white;
-                background-color: black;
-                margin-bottom: 15px;
-            }
-
-            .debugTable {
-                color: lightgray;
-                background-color: #4949b3;
-            }
-
-            .errorTable th,
-            .debugTable th {
-                color: yellow;
-                background-color: maroon;
-                font-size: 1.2em;
-            }
-
-            .debugTable tr {
-                border-top: 1px solid yellow;
-            }
-
-            .errorField {
-                text-align: right;
-            }
-
-            .errorValue {
-                text-align: left;
-                padding-left: 15px;
-            }
-
-            .errorContainer {
-                border: 1px dashed gray;
-                padding: 5px;
-            }
-        </style>
-        <div id="container" class="errorContainer">
-            <h1>500 Server error</h1>
-            <p>Oops! Something went wrong. We're working on it.</p>
-            <p class="errorOut">Error code: 0x13</p>
-            <div class=" errorSpacing">
-                <table class="errorTable">
-                    <thead>
-                        <th class="errorValue">Type:</th>
-                        <th class="errorValue">Message:</th>
-                        <th class="errorField">File:</th>
-                        <th class="errorValue">Line:</th>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="errorValue">Warning</td>
-                            <td class="errorValue">Array to string conversion</td>
-                            <td class="errorField">custom/loudounWebform.php</td>
-                            <td class="errorValue">332</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <table class="debugTable">
-                    <thead>
-                        <th class="errorValue">#</th>
-                        <th class="errorValue">Call</th>
-                        <th class="errorValue">File</th>
-                        <th class="errorValue">Line</th>
-                    </thead>
-                                                <tr>
-                                <td class="errorValue">1</td>
-                                <td class="errorValue">_error_handler(integer,string,string,integer)</td>
-                                <td class="errorValue">custom/loudounWebform.php</td>
-                                <td class="errorValue">ln 332</td>
-                            </tr>
-                                                    <tr>
-                                <td class="errorValue">2</td>
-                                <td class="errorValue">include(string)</td>
-                                <td class="errorValue">core/Loader.php</td>
-                                <td class="errorValue">ln 969</td>
-                            </tr>
-                                                    <tr>
-                                <td class="errorValue">3</td>
-                                <td class="errorValue">CI_Loader->_ci_load(array)</td>
-                                <td class="errorValue">core/TS_Loader.php</td>
-                                <td class="errorValue">ln 26</td>
-                            </tr>
-                                                    <tr>
-                                <td class="errorValue">4</td>
-                                <td class="errorValue">TS_Loader->view(string,array,boolean)</td>
-                                <td class="errorValue">controllers/Client.php</td>
-                                <td class="errorValue">ln 1872</td>
-                            </tr>
-                                                    <tr>
-                                <td class="errorValue">5</td>
-                                <td class="errorValue">Client->loudounGrievanceForm(array)</td>
-                                <td class="errorValue">controllers/Client.php</td>
-                                <td class="errorValue">ln 1632</td>
-                            </tr>
-                                                    <tr>
-                                <td class="errorValue">6</td>
-                                <td class="errorValue">Client->getExternalIntakeFile(array)</td>
-                                <td class="errorValue">controllers/Client.php</td>
-                                <td class="errorValue">ln 1540</td>
-                            </tr>
-                                                    <tr>
-                                <td class="errorValue">7</td>
-                                <td class="errorValue">Client->getCustomExternalIntakeFile(string)</td>
-                                <td class="errorValue">core/CodeIgniter.php</td>
-                                <td class="errorValue">ln 533</td>
-                            </tr>
-                                                    <tr>
-                                <td class="errorValue">8</td>
-                                <td class="errorValue">require_once(string)</td>
-                                <td class="errorValue">bluedag.dev/index.php</td>
-                                <td class="errorValue">ln 62</td>
-                            </tr>
-                                        </table>
-            </div>
-        </div>
-                <pre>
-Array";
+                        document.getElementById("bd-grievance").innerHTML = "Your grievance has been submitted.";
                                             } else {
                         console.log(this.response.message);
                         document.getElementById("bd-grievance").innerHTML = failureContent;
@@ -593,11 +468,11 @@ function requesterPhoneEmailValidation(e) {
 
 function submitterDifferentCheck() {
     let isSubmitterDifferent = "no";
-    let submitterFields = document.getElementById("bd-66d0a827d0897-submitterDetails");
-    let submitterFirstNameField = document.getElementById("bd-66d0a827d0897-SubmitterFirstName");
-    let submitterLastNameField = document.getElementById("bd-66d0a827d0897-SubmitterLastName");
-    let submitterEmail = document.getElementById("bd-66d0a827d0897-SubmitterEmail");
-    let submitterPhone = document.getElementById("bd-66d0a827d0897-SubmitterPhone");
+    let submitterFields = document.getElementById("bd-66d0ad38e5a9e-submitterDetails");
+    let submitterFirstNameField = document.getElementById("bd-66d0ad38e5a9e-SubmitterFirstName");
+    let submitterLastNameField = document.getElementById("bd-66d0ad38e5a9e-SubmitterLastName");
+    let submitterEmail = document.getElementById("bd-66d0ad38e5a9e-SubmitterEmail");
+    let submitterPhone = document.getElementById("bd-66d0ad38e5a9e-SubmitterPhone");
 
     if (submitterFirstNameField && submitterFirstNameField.value) {
         if (submitterFirstNameField !== null) submitterFirstNameField.required = true;
@@ -632,12 +507,12 @@ function grievanceTypeValidation() {
             break;
         }
     }
-    let grievanceTypeOptions = document.getElementById("bd-66d0a827d0897-grievance-type-options");
+    let grievanceTypeOptions = document.getElementById("bd-66d0ad38e5a9e-grievance-type-options");
     if (grievanceTypeOptions) {
         if (!validated) {
-            grievanceTypeOptions.classList.add('bd-66d0a827d0897-invalidField');
+            grievanceTypeOptions.classList.add('bd-66d0ad38e5a9e-invalidField');
         } else {
-            grievanceTypeOptions.classList.remove('bd-66d0a827d0897-invalidField');
+            grievanceTypeOptions.classList.remove('bd-66d0ad38e5a9e-invalidField');
         }
     }
 
